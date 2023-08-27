@@ -1,0 +1,201 @@
+fileFormatVersion: 2
+guid: be6e8bdaebc09a44780ffadb2e6625e3
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Bip001
+    100002: Bip001_Head
+    100004: Bip001_Jaw
+    100006: Bip001_L_Calf
+    100008: Bip001_L_Clavicle
+    100010: Bip001_L_Ear1
+    100012: Bip001_L_Ear2
+    100014: Bip001_L_Finger0
+    100016: Bip001_L_Foot
+    100018: Bip001_L_Forearm
+    100020: Bip001_L_Hand
+    100022: Bip001_L_HorseLink
+    100024: Bip001_L_Thigh
+    100026: Bip001_L_Toe0
+    100028: Bip001_L_UpperArm
+    100030: Bip001_Neck
+    100032: Bip001_Nose1
+    100034: Bip001_Nose2
+    100036: Bip001_Nose3
+    100038: Bip001_Nose4
+    100040: Bip001_Pelvis
+    100042: Bip001_R_Calf
+    100044: Bip001_R_Clavicle
+    100046: Bip001_R_Ear1
+    100048: Bip001_R_Ear2
+    100050: Bip001_R_Finger0
+    100052: Bip001_R_Foot
+    100054: Bip001_R_Forearm
+    100056: Bip001_R_Hand
+    100058: Bip001_R_HorseLink
+    100060: Bip001_R_Thigh
+    100062: Bip001_R_Toe0
+    100064: Bip001_R_UpperArm
+    100066: Bip001_Spine
+    100068: Bip001_Spine1
+    100070: Bone_Tail1
+    100072: Bone_Tail2
+    100074: Bone_Tail3
+    100076: //RootNode
+    100078: Elephant_01_2
+    100080: Elephant_01_3
+    100082: Elephant_01_base
+    100084: Shadow
+    100086: Shadow_0
+    100088: Skin
+    400000: Bip001
+    400002: Bip001_Head
+    400004: Bip001_Jaw
+    400006: Bip001_L_Calf
+    400008: Bip001_L_Clavicle
+    400010: Bip001_L_Ear1
+    400012: Bip001_L_Ear2
+    400014: Bip001_L_Finger0
+    400016: Bip001_L_Foot
+    400018: Bip001_L_Forearm
+    400020: Bip001_L_Hand
+    400022: Bip001_L_HorseLink
+    400024: Bip001_L_Thigh
+    400026: Bip001_L_Toe0
+    400028: Bip001_L_UpperArm
+    400030: Bip001_Neck
+    400032: Bip001_Nose1
+    400034: Bip001_Nose2
+    400036: Bip001_Nose3
+    400038: Bip001_Nose4
+    400040: Bip001_Pelvis
+    400042: Bip001_R_Calf
+    400044: Bip001_R_Clavicle
+    400046: Bip001_R_Ear1
+    400048: Bip001_R_Ear2
+    400050: Bip001_R_Finger0
+    400052: Bip001_R_Foot
+    400054: Bip001_R_Forearm
+    400056: Bip001_R_Hand
+    400058: Bip001_R_HorseLink
+    400060: Bip001_R_Thigh
+    400062: Bip001_R_Toe0
+    400064: Bip001_R_UpperArm
+    400066: Bip001_Spine
+    400068: Bip001_Spine1
+    400070: Bone_Tail1
+    400072: Bone_Tail2
+    400074: Bone_Tail3
+    400076: //RootNode
+    400078: Elephant_01_2
+    400080: Elephant_01_3
+    400082: Elephant_01_base
+    400084: Shadow
+    400086: Shadow_0
+    400088: Skin
+    2100000: shadow
+    2100002: mat_Elephant01
+    2300000: Shadow_0
+    3300000: Shadow_0
+    4300000: Shadow_0
+    4300002: Elephant_01_3
+    7400000: C4D Animation Take
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Elephant_01_3
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_Elephant01
+    second: {fileID: 2100000, guid: 138c04b07b2e9ac44be8b3a6484a4fe6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shadow
+    second: {fileID: 2100000, guid: 808a56753ffc5f245b0d2c67f603335b, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
