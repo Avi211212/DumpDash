@@ -322,7 +322,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: b468e53677ceeeb49bcda5deb95250aa
-    m_Address: Assets/Animation/Animators/CharacterAnimation.controller
+    m_Address: Assets/Animation/Animators/CharacterAnimationCatOriginal.controller
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: b7e8c93fba6557646bbe79ad80e49536

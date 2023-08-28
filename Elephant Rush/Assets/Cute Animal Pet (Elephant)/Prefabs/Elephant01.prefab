@@ -649,9 +649,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9148483082331652361}
-  - component: {fileID: 9148483082341565605}
-  - component: {fileID: 9148483082331528128}
-  - component: {fileID: 9148483082331528131}
   m_Layer: 0
   m_Name: Elephant01
   m_TagString: Untagged
@@ -675,61 +672,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!111 &9148483082341565605
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9148483082331561257}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 1411b4c64979da24188bf963b0572b32, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 93bcf7453507ac74f88e6f095306fd92, type: 3}
-  - {fileID: 7400000, guid: 20bfd0424cb7bc044af6cadd85a7bdb7, type: 3}
-  - {fileID: 7400000, guid: bbda52202bf61e941a22dbf5aaf863c1, type: 3}
-  - {fileID: 7400000, guid: 73db153b503372e489866b3a3ca124b3, type: 3}
-  - {fileID: 7400000, guid: 0713b7daf6ec8794196256ed9c6268a4, type: 3}
-  - {fileID: 7400000, guid: 1411b4c64979da24188bf963b0572b32, type: 2}
-  - {fileID: 7400000, guid: 50cb0ca1ac276bc4aac817011683c537, type: 3}
-  - {fileID: 7400000, guid: cdf81d69fbd33c2489e332b8db7bf980, type: 3}
-  - {fileID: 7400000, guid: e290d70f60251db46aab66c08fe677e9, type: 3}
-  - {fileID: 7400000, guid: be6e8bdaebc09a44780ffadb2e6625e3, type: 3}
-  - {fileID: 7400000, guid: b4580598754bdd149812c47270d4b40d, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 1
---- !u!54 &9148483082331528128
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9148483082331561257}
-  serializedVersion: 2
-  m_Mass: 5
-  m_Drag: 5
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &9148483082331528131
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9148483082331561257}
-  m_Material: {fileID: 13400000, guid: 55fcff1ec9dcf394fb6a96e631fa6e38, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.3, y: 1, z: 1.3}
-  m_Center: {x: 0, y: 0.5, z: 0.2}
 --- !u!1 &9148483082331561259
 GameObject:
   m_ObjectHideFlags: 0
