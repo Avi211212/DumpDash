@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 465740}
-  - component: {fileID: 9501716}
   - component: {fileID: 11427384}
   - component: {fileID: 82000013563701790}
   - component: {fileID: 114852966775052252}
@@ -39,26 +38,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &9501716
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 199232}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: b4580598754bdd149812c47270d4b40d, type: 3}
-  m_Controller: {fileID: 22100000, guid: 96447d54a0d11904f84e4d5b2d6de695, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 0
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &11427384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,7 +57,7 @@ MonoBehaviour:
   - {fileID: 6205175830723319367}
   - {fileID: 4240721666938767633}
   - {fileID: 6572344717247413808}
-  animator: {fileID: 9501716}
+  animator: {fileID: 7441072776908419769}
   icon: {fileID: 21300054, guid: e1a536f74c7ef384a8d7132148ace0c8, type: 3}
   jumpSound: {fileID: 8300000, guid: 819da6b208e0c0342b38dbbba363b740, type: 3}
   hitSound: {fileID: 8300000, guid: 4df05e5a3da67b74ab57e4fdbff8c1fa, type: 3}
@@ -567,6 +546,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e31571747c1c5e4fb1527a0bf0c90ff, type: 3}
+--- !u!95 &7441072776908419769 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 294890416079590493, guid: 4e31571747c1c5e4fb1527a0bf0c90ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 7157250056685610724}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8497732291179888590 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1638654403685079338, guid: 4e31571747c1c5e4fb1527a0bf0c90ff,
