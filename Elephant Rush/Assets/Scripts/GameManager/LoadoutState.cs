@@ -65,7 +65,7 @@ public class LoadoutState : AState
 
 	protected Modifier m_CurrentModifier = new Modifier();
 
-    protected const float k_CharacterRotationSpeed = 45f;
+    protected const float k_CharacterRotationSpeed = 0f;
     protected const string k_ShopSceneName = "shop";
     protected const float k_OwnedAccessoriesCharacterOffset = -0.1f;
     protected int k_UILayer;
