@@ -213,7 +213,7 @@ public class TrackManager : MonoBehaviour
             
             //Instantiate(CharacterDatabase.GetCharacter(PlayerData.instance.characters[PlayerData.instance.usedCharacter]), Vector3.zero, Quaternion.identity);
             player.transform.SetParent(characterController.characterCollider.transform, false);
-            Camera.main.transform.SetParent(characterController.transform, true);
+            Camera.main.transform.SetParent(player.transform, true);
 
             if (m_IsTutorial)
                 m_CurrentThemeData = tutorialThemeData;
