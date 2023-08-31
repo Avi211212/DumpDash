@@ -12,5 +12,4 @@ public class RestartRunning : StateMachineBehaviour
         
         TrackManager.instance.StartMove();
     }
-
 }
