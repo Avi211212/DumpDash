@@ -23,6 +23,8 @@ public class GameOverState : AState
 
     public override void Enter(AState from)
     {
+        Camera.main.transform.SetParent(null, true);
+
         canvas.gameObject.SetActive(true);
 
 		miniLeaderboard.playerEntry.inputName.text = PlayerData.instance.previousName;
