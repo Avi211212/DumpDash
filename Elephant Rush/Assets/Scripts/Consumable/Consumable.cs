@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.AddressableAssets;
+using System.Diagnostics;
+using System.Diagnostics;
 
 /// <summary>
 /// Defines a consumable (called "power up" in game). Each consumable is derived from this and implements its functions.
@@ -63,12 +65,13 @@ public abstract class Consumable : MonoBehaviour
 
         if(ActivatedParticleReference != null)
         {
+
             //Addressables 1.0.1-preview
             var op = ActivatedParticleReference.InstantiateAsync();
             yield return op;
             m_ParticleSpawned = op.Result.GetComponent<ParticleSystem>();
             if (!m_ParticleSpawned.main.loop)
-                StartCoroutine(TimedRelease(m_ParticleSpawned.gameObject, m_ParticleSpawned.main.duration));
+               StartCoroutine(TimedRelease(m_ParticleSpawned.gameObject, m_ParticleSpawned.main.duration));
 
             m_ParticleSpawned.transform.SetParent(c.characterCollider.transform);
             m_ParticleSpawned.transform.localPosition = op.Result.transform.position;
