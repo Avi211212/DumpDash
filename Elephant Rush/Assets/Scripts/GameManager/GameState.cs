@@ -321,8 +321,10 @@ public class GameState : AState
 
 	public void QuitToLoadout()
 	{
-		// Used by the pause menu to return immediately to loadout, canceling everything.
-		Time.timeScale = 1.0f;
+        // Used by the pause menu to return immediately to loadout, canceling everything.
+        Camera.main.transform.SetParent(null, true);
+
+        Time.timeScale = 1.0f;
 		AudioListener.pause = false;
 		trackManager.End();
 		trackManager.isRerun = false;
