@@ -31254,7 +31254,7 @@ MonoBehaviour:
   jumpLength: 6
   jumpHeight: 1.2
   slideLength: 7
-  slideSound: {fileID: 8300000, guid: febd5a5a8b245774fbfa9f0bef51e0b6, type: 3}
+  slideSound: {fileID: 8300000, guid: 4fb2cfb16b1fe0a4ea21049e9eb6fea8, type: 3}
   powerUpUseSound: {fileID: 8300000, guid: defdb98bfddc24748aead1ce73ba7972, type: 3}
   powerupSource: {fileID: 2094493435}
   currentTutorialLevel: 0
