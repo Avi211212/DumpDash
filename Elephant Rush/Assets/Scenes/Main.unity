@@ -25367,7 +25367,7 @@ MonoBehaviour:
   minSpeed: 10
   maxSpeed: 30
   speedStep: 4
-  laneOffset: 4
+  laneOffset: 3.5
   invincible: 0
   consumableDatabase: {fileID: 11400000, guid: 5d316f81231c9964dadda0b50ca7ae6b, type: 2}
   skyMeshFilter: {fileID: 201362454}
