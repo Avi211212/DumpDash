@@ -39,6 +39,8 @@ public class CharacterCollider : MonoBehaviour
 
 	public new AudioSource audio { get { return m_Audio; } }
 
+	public bool hitAttackable = false;
+
     [HideInInspector]
 	public List<GameObject> magnetCoins = new List<GameObject>();
 
@@ -124,6 +126,7 @@ public class CharacterCollider : MonoBehaviour
         }
         else if(c.gameObject.layer == k_ObstacleLayerIndex)
         {
+			bool hasAttacked = false;
             if (m_Invincible || controller.IsCheatInvincible())
                 return;
 
@@ -148,12 +151,31 @@ public class CharacterCollider : MonoBehaviour
             }
             else
             {
-                controller.currentLife -= 1;
+				if (c.gameObject.CompareTag("Attackable") && controller.isSliding)
+				{
+					hasAttacked = true;
+					UnityEngine.Debug.Log("Hit attackable while sliding");
+                }
+                else
+				{
+					controller.currentLife -= 1;
+				}
             }
 
             controller.character.animator.SetTrigger(s_HitHash);
 
-			if (controller.currentLife > 0)
+            if (!hasAttacked)
+			{
+                hasAttacked = false;
+                UnityEngine.Debug.Log("ElephantHit");
+            }
+            else
+			{
+                UnityEngine.Debug.Log("ElephantNotHit");
+                //controller.character.animator.SetTrigger("Moving");
+            }
+
+            if (controller.currentLife > 0)
 			{
 				m_Audio.PlayOneShot(controller.character.hitSound);
                 SetInvincible ();

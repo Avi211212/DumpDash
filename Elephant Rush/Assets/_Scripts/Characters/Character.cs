@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using System.Diagnostics;
 
 /// <summary>
 /// Mainly used as a data container to define a character. This script is attached to the prefab

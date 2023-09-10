@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.AddressableAssets;
+using System.Diagnostics;
 
 /// <summary>
 /// Handle everything related to controlling the character. Interact with both the Character (visual, animation) and CharacterCollider
@@ -29,13 +30,13 @@ public class CharacterInputController : MonoBehaviour
 	public int currentLife { get { return m_CurrentLife; } set { m_CurrentLife = value; } }
 	public List<Consumable> consumables { get { return m_ActiveConsumables; } }
 	public bool isJumping { get { return m_Jumping; } }
-	public bool isSliding { get { return m_Sliding; } }
+	public bool isSliding { get { return m_Sliding; } set { m_Sliding = value; } }
 
 	[Header("Controls")]
 	public float jumpLength = 2.0f;     // Distance jumped
 	public float jumpHeight = 1.2f;
 
-	public float slideLength = 2.0f;
+	public float slideLength = 2.0f; 
 
 	[Header("Sounds")]
 	public AudioClip slideSound;
@@ -375,8 +376,8 @@ public class CharacterInputController : MonoBehaviour
 			m_Sliding = false;
 
 			characterCollider.Slide(false);
-		}
-	}
+        }
+    }
 
 	public void ChangeLane(int direction)
     {
