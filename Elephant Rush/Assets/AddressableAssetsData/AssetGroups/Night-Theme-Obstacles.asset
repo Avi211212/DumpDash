@@ -26,7 +26,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 61bb777a99260874f88fe72c93801af9
-    m_Address: ObstacleHighBarrier
+    m_Address: ObstacleRickshaw
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 6789d11662a4a2d4b86aac2f6082e0a0
@@ -43,6 +43,14 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: e4530c9317086c24e956c8e653d7cfc1
     m_Address: ObstacleBin
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 47fd45d517bb445568a3544fcf100dbb
+    m_Address: ObstacleBudhia
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e2528de24c6c742b89923941733c5c30
+    m_Address: ObstacleCar
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
