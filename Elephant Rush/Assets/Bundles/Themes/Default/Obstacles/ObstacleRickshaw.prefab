@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 82000010844000776}
   - component: {fileID: 114422673240210310}
   m_Layer: 9
-  m_Name: ObstacleHighBarrier
+  m_Name: ObstacleRickshaw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
