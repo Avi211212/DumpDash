@@ -1528,15 +1528,19 @@ MonoBehaviour:
   objectRoot: {fileID: 0}
   collectibleTransform: {fileID: 0}
   possibleObstacles:
-  - m_AssetGUID: 61bb777a99260874f88fe72c93801af9
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
   - m_AssetGUID: 9be026198609a494aae8cec4aba2c813
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   - m_AssetGUID: 6789d11662a4a2d4b86aac2f6082e0a0
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 47fd45d517bb445568a3544fcf100dbb
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: e2528de24c6c742b89923941733c5c30
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
