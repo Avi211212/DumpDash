@@ -58,7 +58,7 @@ MonoBehaviour:
   - {fileID: 4240721666938767633}
   - {fileID: 6572344717247413808}
   animator: {fileID: 7441072776908419769}
-  icon: {fileID: 21300054, guid: e1a536f74c7ef384a8d7132148ace0c8, type: 3}
+  icon: {fileID: 21300000, guid: 4f934a856aa6246e2829ade9c8d9deeb, type: 3}
   jumpSound: {fileID: 8300000, guid: 23ffb4e3b28e54a48a1cfe419846578d, type: 3}
   hitSound: {fileID: 8300000, guid: f51ebf35391cc054196ade4a6d9be7a9, type: 3}
   deathSound: {fileID: 8300000, guid: 54e2a8da2acab43c0ace59ada14d3d34, type: 3}
