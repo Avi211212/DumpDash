@@ -13988,7 +13988,7 @@ GameObject:
   - component: {fileID: 1144878500}
   m_Layer: 0
   m_Name: CharacterSlot
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14037,11 +14037,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1144878495}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.57612777, y: 1.2, z: 0.9324373}
-  m_Center: {x: 0.006688714, y: 0.7, z: 0.03378135}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0.006688714, y: 0.7, z: 0.31}
 --- !u!114 &1144878499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14058,6 +14058,7 @@ MonoBehaviour:
   koParticle: {fileID: 2038194883}
   coinSound: {fileID: 8300000, guid: 62c15b4aac9d60e4a963f4f55d31e706, type: 3}
   premiumSound: {fileID: 8300000, guid: 553f1d03da54003479f6ff63d3155919, type: 3}
+  hitAttackable: 0
   magnetCoins: []
 --- !u!82 &1144878500
 AudioSource:

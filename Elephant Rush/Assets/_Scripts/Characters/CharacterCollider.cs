@@ -154,7 +154,6 @@ public class CharacterCollider : MonoBehaviour
 				if (c.gameObject.CompareTag("Attackable") && controller.isSliding)
 				{
 					hasAttacked = true;
-					UnityEngine.Debug.Log("Hit attackable while sliding");
                 }
                 else
 				{
@@ -162,17 +161,14 @@ public class CharacterCollider : MonoBehaviour
 				}
             }
 
-            controller.character.animator.SetTrigger(s_HitHash);
-
             if (!hasAttacked)
 			{
-                hasAttacked = false;
-                UnityEngine.Debug.Log("ElephantHit");
+                controller.character.animator.SetTrigger(s_HitHash);
             }
             else
 			{
-                UnityEngine.Debug.Log("ElephantNotHit");
-                //controller.character.animator.SetTrigger("Moving");
+                TrackManager.instance.StartMove();
+                hasAttacked = false;
             }
 
             if (controller.currentLife > 0)
