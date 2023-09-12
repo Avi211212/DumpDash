@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using UnityEngine;
 
 public class BudhiaHit : MonoBehaviour
@@ -12,9 +13,15 @@ public class BudhiaHit : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Vector3 newForce = new Vector3(0, 0, force);
-            rigidbody.AddForce(newForce, ForceMode.Impulse);
+            rigidbody.AddForce(Vector3.forward * force);
             animator.SetTrigger("Hit");
+            StartCoroutine(QuitBudhiaMovement());
         }
+    }
+
+    private IEnumerator QuitBudhiaMovement()
+    {
+        yield return new WaitForSeconds(1f);
+        rigidbody.velocity = Vector3.zero;
     }
 }

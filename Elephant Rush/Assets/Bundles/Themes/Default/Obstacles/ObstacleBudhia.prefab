@@ -187,7 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1675161542346256930}
   rigidbody: {fileID: 4008999463692217023}
-  force: 1
+  force: 300
 --- !u!54 &4008999463692217023
 Rigidbody:
   m_ObjectHideFlags: 0
