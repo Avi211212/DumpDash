@@ -55,6 +55,16 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/UI/Score.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 18d6bd86a5ba4f445b8ec08d8cf60ecd
+    m_Address: Mota Hathi
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - characters
+  - m_GUID: 2fb7881c4b3224ba38cd4a801c632eec
+    m_Address: Bada Hathi
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - characters
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 735e874f947d0e143a6b4e83f8a7283a, type: 2}
   m_SchemaSet:
