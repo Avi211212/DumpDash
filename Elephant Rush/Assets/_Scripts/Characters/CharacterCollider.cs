@@ -182,12 +182,11 @@ public class CharacterCollider : MonoBehaviour
                     m_DeathData.premium = controller.premium;
                     m_DeathData.score = controller.trackManager.score;
                     m_DeathData.worldDistance = controller.trackManager.worldDistance;
-
                 }
             }
             else
 			{
-                TrackManager.instance.StartMove();
+                TrackManager.instance.StartMove(false);
                 hasAttacked = false;
             }
         }
