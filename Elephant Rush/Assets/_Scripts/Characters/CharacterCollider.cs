@@ -164,32 +164,32 @@ public class CharacterCollider : MonoBehaviour
             if (!hasAttacked)
 			{
                 controller.character.animator.SetTrigger(s_HitHash);
+
+                if (controller.currentLife > 0)
+                {
+                    m_Audio.PlayOneShot(controller.character.hitSound);
+                    SetInvincible();
+                }
+                // The collision killed the player, record all data to analytics.
+                else
+                {
+                    m_Audio.PlayOneShot(controller.character.deathSound);
+
+                    m_DeathData.character = controller.character.characterName;
+                    m_DeathData.themeUsed = controller.trackManager.currentTheme.themeName;
+                    m_DeathData.obstacleType = ob.GetType().ToString();
+                    m_DeathData.coins = controller.coins;
+                    m_DeathData.premium = controller.premium;
+                    m_DeathData.score = controller.trackManager.score;
+                    m_DeathData.worldDistance = controller.trackManager.worldDistance;
+
+                }
             }
             else
 			{
                 TrackManager.instance.StartMove();
                 hasAttacked = false;
             }
-
-            if (controller.currentLife > 0)
-			{
-				m_Audio.PlayOneShot(controller.character.hitSound);
-                SetInvincible ();
-			}
-            // The collision killed the player, record all data to analytics.
-			else
-			{
-				m_Audio.PlayOneShot(controller.character.deathSound);
-
-				m_DeathData.character = controller.character.characterName;
-				m_DeathData.themeUsed = controller.trackManager.currentTheme.themeName;
-				m_DeathData.obstacleType = ob.GetType().ToString();
-				m_DeathData.coins = controller.coins;
-				m_DeathData.premium = controller.premium;
-				m_DeathData.score = controller.trackManager.score;
-				m_DeathData.worldDistance = controller.trackManager.worldDistance;
-
-			}
         }
         else if(c.gameObject.layer == k_PowerupLayerIndex)
         {
