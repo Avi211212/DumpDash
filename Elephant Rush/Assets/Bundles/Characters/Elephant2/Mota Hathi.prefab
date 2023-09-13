@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 4367647060447374360}
   - component: {fileID: -1544271519364362467}
   m_Layer: 0
-  m_Name: character
+  m_Name: Mota Hathi
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
