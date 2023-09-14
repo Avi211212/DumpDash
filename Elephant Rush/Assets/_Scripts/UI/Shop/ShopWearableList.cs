@@ -25,42 +25,53 @@ public class ShopWearableList : ShopList
             Destroy(t.gameObject);
         }
 
-        headerPrefab.InstantiateAsync().Completed += (op) =>
+        foreach (KeyValuePair<string, CharacterAccessories> pair in AccessoriesDatabase.dictionary)
         {
-            LoadAccessory(op, 0);
-        };
-    }
-
-    void LoadAccessory(AsyncOperationHandle<GameObject> op, int currentIndex)
-    {
-        if (op.Result == null || !(op.Result is GameObject))
-        {
-            UnityEngine.Debug.LogWarning(string.Format("Unable to load header {0}.", headerPrefab.RuntimeKey));
-        }
-        else
-        {
-            GameObject header = op.Result;
-            header.transform.SetParent(listRoot, false);
-            ShopItemListItem itmHeader = header.GetComponent<ShopItemListItem>();
-            itmHeader.nameText.text = "Wearables";
-
-            for(int i = 0; i < accessoryList.Count; i++)
+            CharacterAccessories charAccessory = pair.Value;
+            if (charAccessory != null)
             {
-                GameObject accessory = accessoryList[i];
-                accessory.transform.SetParent(listRoot, false);
+                prefabItem.InstantiateAsync().Completed += (op) =>
+                {
+                    if (op.Result == null || !(op.Result is GameObject))
+                    {
+                        UnityEngine.Debug.LogWarning(string.Format("Unable to load character shop list {0}.", prefabItem.Asset.name));
+                        return;
+                    }
+                    GameObject newEntry = op.Result;
+                    newEntry.transform.SetParent(listRoot, false);
 
-                ShopItemListItem itm = accessory.GetComponent<ShopItemListItem>();
+                    ShopItemListItem itm = newEntry.GetComponent<ShopItemListItem>();
 
-                itm.nameText.text = accessory.name;
-                itm.pricetext.text = accessory.GetComponent<CharacterAccessories>().cost.ToString();
-                itm.premiumText.text = accessory.GetComponent<CharacterAccessories>().premiumCost.ToString();
-                itm.icon.sprite = accessory.GetComponent<CharacterAccessories>().accessoryIcon;
-                itm.buyButton.onClick.AddListener(() => Buy(accessory.name, accessory.GetComponent<CharacterAccessories>().cost, accessory.GetComponent<CharacterAccessories>().premiumCost));
+                    string compoundName = charAccessory.accessoryName;
 
-                RefreshButton(itm, accessory.GetComponent<CharacterAccessories>(), accessory.name);
+                    itm.icon.sprite = charAccessory.accessoryIcon;
+                    itm.nameText.text = compoundName;
+                    itm.pricetext.text = charAccessory.cost.ToString();
+
+                    itm.buyButton.image.sprite = itm.buyButtonSprite;
+
+                    if (charAccessory.premiumCost > 0)
+                    {
+                        itm.premiumText.transform.parent.gameObject.SetActive(true);
+                        itm.premiumText.text = charAccessory.premiumCost.ToString();
+                    }
+                    else
+                    {
+                        itm.premiumText.transform.parent.gameObject.SetActive(false);
+                    }
+
+                    itm.buyButton.onClick.AddListener(delegate ()
+                    {
+                        Buy(compoundName, charAccessory.cost, charAccessory.premiumCost);
+                    });
+
+                    m_RefreshCallback += delegate () { RefreshButton(itm, charAccessory, compoundName); };
+                    RefreshButton(itm, charAccessory, compoundName);
+                };
             }
         }
     }
+
 
     protected void RefreshButton(ShopItemListItem itm, CharacterAccessories accessory, string compoundName)
     {

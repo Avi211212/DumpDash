@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Accessories
+  m_EditorClassIdentifier: 
+  m_GroupName: Accessories
+  m_Data:
+    m_SerializedData: []
+  m_GUID: ed44274d1b910b44cbf3e3e20a17a51b
+  m_SerializeEntries:
+  - m_GUID: be8c97a1d0cf90f4f9c15b45ece7e44a
+    m_Address: Clown Hat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - accessories
+  - m_GUID: 035434afcac98c54b879bea5c7d0e801
+    m_Address: Cowboy Hat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - accessories
+  - m_GUID: 4cd6d4c3e790633449fb297e45223e7f
+    m_Address: Crown
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - accessories
+  - m_GUID: 81e269c36279b304098ba74b8bf59aca
+    m_Address: Magician Hat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - accessories
+  - m_GUID: c451bac42e2bc194a9d753ee7810a1ee
+    m_Address: Miner Hat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - accessories
+  - m_GUID: b6545e4e127094711bcaab9dab2cff33
+    m_Address: Party Hat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - accessories
+  - m_GUID: eaedbb1e488c1c044847ed214805be5e
+    m_Address: Police Hat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - accessories
+  - m_GUID: b82466de2948d8148a87f19b500fa18e
+    m_Address: Shower Cap
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - accessories
+  - m_GUID: ab5e998d3d112b84f849526432badaa4
+    m_Address: Sombrero
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - accessories
+  - m_GUID: f61bb6278c39f5c4a8aaf0df39ad41c5
+    m_Address: Turban
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - accessories
+  - m_GUID: 5e9d7fe8a7c1b6044a31e76e376aff09
+    m_Address: Viking Helmet
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - accessories
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 735e874f947d0e143a6b4e83f8a7283a, type: 2}
+  m_SchemaSet:
+    m_Schemas: []
