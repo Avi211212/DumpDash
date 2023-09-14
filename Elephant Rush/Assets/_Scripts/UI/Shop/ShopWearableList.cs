@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using System.Diagnostics;
+using System;
 
 #if UNITY_ANALYTICS
 using UnityEngine.Analytics;
@@ -17,7 +19,47 @@ public class ShopWearableList : ShopList
     public override void Populate()
     {
         m_RefreshCallback = null;
-        
+
+        foreach (Transform t in listRoot)
+        {
+            Destroy(t.gameObject);
+        }
+
+        headerPrefab.InstantiateAsync().Completed += (op) =>
+        {
+            LoadAccessory(op, 0);
+        };
+    }
+
+    void LoadAccessory(AsyncOperationHandle<GameObject> op, int currentIndex)
+    {
+        if (op.Result == null || !(op.Result is GameObject))
+        {
+            UnityEngine.Debug.LogWarning(string.Format("Unable to load header {0}.", headerPrefab.RuntimeKey));
+        }
+        else
+        {
+            GameObject header = op.Result;
+            header.transform.SetParent(listRoot, false);
+            ShopItemListItem itmHeader = header.GetComponent<ShopItemListItem>();
+            itmHeader.nameText.text = "Wearables";
+
+            for(int i = 0; i < accessoryList.Count; i++)
+            {
+                GameObject accessory = accessoryList[i];
+                accessory.transform.SetParent(listRoot, false);
+
+                ShopItemListItem itm = accessory.GetComponent<ShopItemListItem>();
+
+                itm.nameText.text = accessory.name;
+                itm.pricetext.text = accessory.GetComponent<CharacterAccessories>().cost.ToString();
+                itm.premiumText.text = accessory.GetComponent<CharacterAccessories>().premiumCost.ToString();
+                itm.icon.sprite = accessory.GetComponent<CharacterAccessories>().accessoryIcon;
+                itm.buyButton.onClick.AddListener(() => Buy(accessory.name, accessory.GetComponent<CharacterAccessories>().cost, accessory.GetComponent<CharacterAccessories>().premiumCost));
+
+                RefreshButton(itm, accessory.GetComponent<CharacterAccessories>(), accessory.name);
+            }
+        }
     }
 
     protected void RefreshButton(ShopItemListItem itm, CharacterAccessories accessory, string compoundName)
