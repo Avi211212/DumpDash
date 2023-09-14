@@ -1820,6 +1820,7 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  item: {fileID: 126320, guid: abafe3707f9235b4ab7cdfd1333295c3, type: 3}
   accessoryList:
   - {fileID: 2685626357122819766, guid: be8c97a1d0cf90f4f9c15b45ece7e44a, type: 3}
   - {fileID: 1329101935712441491, guid: 035434afcac98c54b879bea5c7d0e801, type: 3}

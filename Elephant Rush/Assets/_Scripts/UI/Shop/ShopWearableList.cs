@@ -14,6 +14,7 @@ public class ShopWearableList : ShopList
 {
     public AssetReference headerPrefab;
 
+    [SerializeField] private GameObject item;
     [SerializeField] private List<GameObject> accessoryList = new List<GameObject>();
 
     public override void Populate()
@@ -25,49 +26,41 @@ public class ShopWearableList : ShopList
             Destroy(t.gameObject);
         }
 
-        foreach (KeyValuePair<string, CharacterAccessories> pair in AccessoriesDatabase.dictionary)
+        foreach(GameObject accessory in accessoryList)
         {
-            CharacterAccessories charAccessory = pair.Value;
+            CharacterAccessories charAccessory = accessory.GetComponent<CharacterAccessories>();
             if (charAccessory != null)
             {
-                prefabItem.InstantiateAsync().Completed += (op) =>
+                GameObject newEntry = Instantiate(item);
+                newEntry.transform.SetParent(listRoot, false);
+
+                ShopItemListItem itm = newEntry.GetComponent<ShopItemListItem>();
+
+                string compoundName = charAccessory.accessoryName;
+
+                itm.icon.sprite = charAccessory.accessoryIcon;
+                itm.nameText.text = compoundName;
+                itm.pricetext.text = charAccessory.cost.ToString();
+
+                itm.buyButton.image.sprite = itm.buyButtonSprite;
+
+                if (charAccessory.premiumCost > 0)
                 {
-                    if (op.Result == null || !(op.Result is GameObject))
-                    {
-                        UnityEngine.Debug.LogWarning(string.Format("Unable to load character shop list {0}.", prefabItem.Asset.name));
-                        return;
-                    }
-                    GameObject newEntry = op.Result;
-                    newEntry.transform.SetParent(listRoot, false);
+                    itm.premiumText.transform.parent.gameObject.SetActive(true);
+                    itm.premiumText.text = charAccessory.premiumCost.ToString();
+                }
+                else
+                {
+                    itm.premiumText.transform.parent.gameObject.SetActive(false);
+                }
 
-                    ShopItemListItem itm = newEntry.GetComponent<ShopItemListItem>();
+                itm.buyButton.onClick.AddListener(delegate ()
+                {
+                    Buy(compoundName, charAccessory.cost, charAccessory.premiumCost);
+                });
 
-                    string compoundName = charAccessory.accessoryName;
-
-                    itm.icon.sprite = charAccessory.accessoryIcon;
-                    itm.nameText.text = compoundName;
-                    itm.pricetext.text = charAccessory.cost.ToString();
-
-                    itm.buyButton.image.sprite = itm.buyButtonSprite;
-
-                    if (charAccessory.premiumCost > 0)
-                    {
-                        itm.premiumText.transform.parent.gameObject.SetActive(true);
-                        itm.premiumText.text = charAccessory.premiumCost.ToString();
-                    }
-                    else
-                    {
-                        itm.premiumText.transform.parent.gameObject.SetActive(false);
-                    }
-
-                    itm.buyButton.onClick.AddListener(delegate ()
-                    {
-                        Buy(compoundName, charAccessory.cost, charAccessory.premiumCost);
-                    });
-
-                    m_RefreshCallback += delegate () { RefreshButton(itm, charAccessory, compoundName); };
-                    RefreshButton(itm, charAccessory, compoundName);
-                };
+                m_RefreshCallback += delegate () { RefreshButton(itm, charAccessory, compoundName); };
+                RefreshButton(itm, charAccessory, compoundName);
             }
         }
     }
