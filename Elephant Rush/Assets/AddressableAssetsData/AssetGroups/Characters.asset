@@ -55,16 +55,6 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/UI/Score.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 18d6bd86a5ba4f445b8ec08d8cf60ecd
-    m_Address: Mota Hathi
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - characters
-  - m_GUID: 2fb7881c4b3224ba38cd4a801c632eec
-    m_Address: Bada Hathi
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - characters
   - m_GUID: 22fb7f35922fca840999ac514cf1fdd8
     m_Address: Pogo
     m_ReadOnly: 0
@@ -72,6 +62,36 @@ MonoBehaviour:
     - characters
   - m_GUID: 54b24710a78657a40b512a1896b94070
     m_Address: Pinky
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - characters
+  - m_GUID: 18d6bd86a5ba4f445b8ec08d8cf60ecd
+    m_Address: Khan
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - characters
+  - m_GUID: ff9a20e32eb7d41828fc3cf8fcbc56e4
+    m_Address: Shaka
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - characters
+  - m_GUID: 5935bcb869ee54cb7aa63b0674e7357f
+    m_Address: Zara
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - characters
+  - m_GUID: 2fb7881c4b3224ba38cd4a801c632eec
+    m_Address: Sultan
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - characters
+  - m_GUID: fde43e66628524b39a148aeb241e368c
+    m_Address: Sunny
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - characters
+  - m_GUID: 5ecd1273130004d21afad0b64cf24df8
+    m_Address: Rose
     m_ReadOnly: 0
     m_SerializedLabels:
     - characters

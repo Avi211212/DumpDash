@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 4367647060447374360}
   - component: {fileID: -1544271519364362467}
   m_Layer: 0
-  m_Name: Mota Hathi
+  m_Name: Khan
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 397d959cc2da2684c8109d35be73c4a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Mota Hathi
+  characterName: Khan
   cost: 100
   premiumCost: 100
   accessories:

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -5833198279866081957}
   - component: {fileID: 5260485813205788330}
   m_Layer: 0
-  m_Name: Bada Hathi
+  m_Name: Sultan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 397d959cc2da2684c8109d35be73c4a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Bada Hathi
+  characterName: Sultan
   cost: 100
   premiumCost: 100
   accessories:
