@@ -134,7 +134,7 @@ public class GameOverState : AState
     {
 		if(miniLeaderboard.playerEntry.inputName.text == "")
 		{
-			miniLeaderboard.playerEntry.inputName.text = "Trash Cat";
+			miniLeaderboard.playerEntry.inputName.text = "Chota Hathi";
 		}
 		else
 		{

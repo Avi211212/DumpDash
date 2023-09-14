@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 82000013563701790}
   - component: {fileID: 114852966775052252}
   m_Layer: 0
-  m_Name: character
+  m_Name: Chota Hathi
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 397d959cc2da2684c8109d35be73c4a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Trash Cat
+  characterName: Chota Hathi
   cost: 0
   premiumCost: 0
   accessories:
