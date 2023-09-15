@@ -255,7 +255,7 @@ public class LoadoutState : AState
                     for (int i = 0; i < c.accessories.Length; ++i)
                     {
 						// Check which accessories we own.
-                        string compoundName = c.characterName + ":" + c.accessories[i].accessoryName;
+                        string compoundName = c.accessories[i].accessoryName;
                         if (PlayerData.instance.characterAccessories.Contains(compoundName))
                         {
                             m_OwnedAccesories.Add(i);

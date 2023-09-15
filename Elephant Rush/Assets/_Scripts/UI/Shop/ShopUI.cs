@@ -15,7 +15,7 @@ public class ShopUI : MonoBehaviour
 
     public ShopItemList itemList;
     public ShopCharacterList characterList;
-    public ShopAccessoriesList accessoriesList;
+    public ShopWearableList accessoriesList;
     public ShopThemeList themeList;
 
     [Header("UI")]

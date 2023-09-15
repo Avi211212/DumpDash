@@ -1687,7 +1687,7 @@ GameObject:
   - component: {fileID: 540240817}
   - component: {fileID: 540240816}
   - component: {fileID: 540240815}
-  - component: {fileID: 540240814}
+  - component: {fileID: 540240819}
   m_Layer: 5
   m_Name: CharacterAccessoriesList
   m_TagString: Untagged
@@ -1716,29 +1716,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -258.99997}
   m_SizeDelta: {x: -30, y: -273.99997}
   m_Pivot: {x: 0.5, y: 0.99999994}
---- !u!114 &540240814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540240812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49f26a9c9db4ce9489119cab283e7a46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefabItem:
-    m_AssetGUID: abafe3707f9235b4ab7cdfd1333295c3
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  listRoot: {fileID: 1703640690}
-  headerPrefab:
-    m_AssetGUID: 2bfa18892388236498842bbfe7a3ff83
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
 --- !u!114 &540240815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1820,6 +1797,42 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &540240819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540240812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 025c751474693cf42b92c31af523274d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabItem:
+    m_AssetGUID: abafe3707f9235b4ab7cdfd1333295c3
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  listRoot: {fileID: 1703640690}
+  headerPrefab:
+    m_AssetGUID: 2bfa18892388236498842bbfe7a3ff83
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  item: {fileID: 126320, guid: abafe3707f9235b4ab7cdfd1333295c3, type: 3}
+  accessoryList:
+  - {fileID: 2685626357122819766, guid: be8c97a1d0cf90f4f9c15b45ece7e44a, type: 3}
+  - {fileID: 1329101935712441491, guid: 035434afcac98c54b879bea5c7d0e801, type: 3}
+  - {fileID: 2283348087931926302, guid: 4cd6d4c3e790633449fb297e45223e7f, type: 3}
+  - {fileID: 7312762409281684792, guid: 81e269c36279b304098ba74b8bf59aca, type: 3}
+  - {fileID: 3977127831130029121, guid: c451bac42e2bc194a9d753ee7810a1ee, type: 3}
+  - {fileID: 1165485439574225663, guid: b6545e4e127094711bcaab9dab2cff33, type: 3}
+  - {fileID: 8390713701185647739, guid: eaedbb1e488c1c044847ed214805be5e, type: 3}
+  - {fileID: 5678071270922722919, guid: b82466de2948d8148a87f19b500fa18e, type: 3}
+  - {fileID: 6364922805305365412, guid: ab5e998d3d112b84f849526432badaa4, type: 3}
+  - {fileID: 9161514447938493170, guid: f61bb6278c39f5c4a8aaf0df39ad41c5, type: 3}
+  - {fileID: 3428074835870344923, guid: 5e9d7fe8a7c1b6044a31e76e376aff09, type: 3}
 --- !u!1 &588085098
 GameObject:
   m_ObjectHideFlags: 0
@@ -4212,7 +4225,7 @@ MonoBehaviour:
   consumableDatabase: {fileID: 11400000, guid: 5d316f81231c9964dadda0b50ca7ae6b, type: 2}
   itemList: {fileID: 451050336}
   characterList: {fileID: 1374068294}
-  accessoriesList: {fileID: 540240814}
+  accessoriesList: {fileID: 540240819}
   themeList: {fileID: 415189872}
   coinCounter: {fileID: 215140664}
   premiumCounter: {fileID: 61687490}

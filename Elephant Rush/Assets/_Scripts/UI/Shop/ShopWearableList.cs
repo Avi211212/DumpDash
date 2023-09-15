@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using System.Diagnostics;
+using System;
 
 #if UNITY_ANALYTICS
 using UnityEngine.Analytics;
@@ -12,13 +14,57 @@ public class ShopWearableList : ShopList
 {
     public AssetReference headerPrefab;
 
+    [SerializeField] private GameObject item;
     [SerializeField] private List<GameObject> accessoryList = new List<GameObject>();
 
     public override void Populate()
     {
         m_RefreshCallback = null;
-        
+
+        foreach (Transform t in listRoot)
+        {
+            Destroy(t.gameObject);
+        }
+
+        foreach(GameObject accessory in accessoryList)
+        {
+            CharacterAccessories charAccessory = accessory.GetComponent<CharacterAccessories>();
+            if (charAccessory != null)
+            {
+                GameObject newEntry = Instantiate(item);
+                newEntry.transform.SetParent(listRoot, false);
+
+                ShopItemListItem itm = newEntry.GetComponent<ShopItemListItem>();
+
+                string compoundName = charAccessory.accessoryName;
+
+                itm.icon.sprite = charAccessory.accessoryIcon;
+                itm.nameText.text = compoundName;
+                itm.pricetext.text = charAccessory.cost.ToString();
+
+                itm.buyButton.image.sprite = itm.buyButtonSprite;
+
+                if (charAccessory.premiumCost > 0)
+                {
+                    itm.premiumText.transform.parent.gameObject.SetActive(true);
+                    itm.premiumText.text = charAccessory.premiumCost.ToString();
+                }
+                else
+                {
+                    itm.premiumText.transform.parent.gameObject.SetActive(false);
+                }
+
+                itm.buyButton.onClick.AddListener(delegate ()
+                {
+                    Buy(compoundName, charAccessory.cost, charAccessory.premiumCost);
+                });
+
+                m_RefreshCallback += delegate () { RefreshButton(itm, charAccessory, compoundName); };
+                RefreshButton(itm, charAccessory, compoundName);
+            }
+        }
     }
+
 
     protected void RefreshButton(ShopItemListItem itm, CharacterAccessories accessory, string compoundName)
     {
