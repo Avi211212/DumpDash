@@ -15,7 +15,7 @@ public abstract class MissionBase
         SINGLE_RUN,
         PICKUP,
         OBSTACLE_JUMP,
-        SLIDING,
+        ATTACK,
         MULTIPLIER,
         MAX
     }
@@ -58,7 +58,7 @@ public abstract class MissionBase
                 return new PickupMission();
             case MissionType.OBSTACLE_JUMP:
                 return new BarrierJumpMission();
-            case MissionType.SLIDING:
+            case MissionType.ATTACK:
                 return new SlidingMission();
             case MissionType.MULTIPLIER:
                 return new MultiplierMission();
@@ -122,7 +122,7 @@ public class PickupMission : MissionBase
 
     public override string GetMissionDesc()
     {
-        return "Pickup " + max + " fishbones";
+        return "Pickup " + max + " bananas";
     }
 
     public override MissionType GetMissionType()
@@ -226,7 +226,7 @@ public class SlidingMission : MissionBase
 
     public override MissionType GetMissionType()
     {
-        return MissionType.SLIDING;
+        return MissionType.ATTACK;
     }
 
     public override void RunStart(TrackManager manager)
