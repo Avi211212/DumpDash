@@ -111,11 +111,81 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 260.07098
       objectReference: {fileID: 0}
+    - target: {fileID: -7633629530098306179, guid: eaefeffb9f69f49179a5599c9c675a1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 20f43105de3f5b540badc87676a7310e, type: 2}
+    - target: {fileID: -6857133994097209087, guid: eaefeffb9f69f49179a5599c9c675a1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7aba7f728b921cd4ba44b14f86b64ab9, type: 2}
+    - target: {fileID: -6190479304995126853, guid: eaefeffb9f69f49179a5599c9c675a1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 20f43105de3f5b540badc87676a7310e, type: 2}
+    - target: {fileID: -5793270786802571357, guid: eaefeffb9f69f49179a5599c9c675a1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 20f43105de3f5b540badc87676a7310e, type: 2}
+    - target: {fileID: -3860890527337690208, guid: eaefeffb9f69f49179a5599c9c675a1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7aba7f728b921cd4ba44b14f86b64ab9, type: 2}
+    - target: {fileID: -1971461652802098508, guid: eaefeffb9f69f49179a5599c9c675a1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7aba7f728b921cd4ba44b14f86b64ab9, type: 2}
+    - target: {fileID: -240757926405796181, guid: eaefeffb9f69f49179a5599c9c675a1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 20f43105de3f5b540badc87676a7310e, type: 2}
+    - target: {fileID: 219662841179670214, guid: eaefeffb9f69f49179a5599c9c675a1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7aba7f728b921cd4ba44b14f86b64ab9, type: 2}
+    - target: {fileID: 676305898955222131, guid: eaefeffb9f69f49179a5599c9c675a1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7aba7f728b921cd4ba44b14f86b64ab9, type: 2}
     - target: {fileID: 919132149155446097, guid: eaefeffb9f69f49179a5599c9c675a1c,
         type: 3}
       propertyPath: m_Name
       value: LilyFlower
       objectReference: {fileID: 0}
+    - target: {fileID: 1476705087427957229, guid: eaefeffb9f69f49179a5599c9c675a1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 20f43105de3f5b540badc87676a7310e, type: 2}
+    - target: {fileID: 1907330875758360516, guid: eaefeffb9f69f49179a5599c9c675a1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 20f43105de3f5b540badc87676a7310e, type: 2}
+    - target: {fileID: 5767610658391720903, guid: eaefeffb9f69f49179a5599c9c675a1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 20f43105de3f5b540badc87676a7310e, type: 2}
+    - target: {fileID: 8774661606021155346, guid: eaefeffb9f69f49179a5599c9c675a1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7aba7f728b921cd4ba44b14f86b64ab9, type: 2}
+    - target: {fileID: 8914273189473017061, guid: eaefeffb9f69f49179a5599c9c675a1c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 20f43105de3f5b540badc87676a7310e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaefeffb9f69f49179a5599c9c675a1c, type: 3}
 --- !u!4 &7004225664550276584 stripped
