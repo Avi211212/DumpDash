@@ -3,7 +3,77 @@ guid: eaefeffb9f69f49179a5599c9c675a1c
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flower1_Anther1Mat
+    second: {fileID: 2100006, guid: 06c4131835f65024586454416f6b1f66, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flower1_Anther2Mat
+    second: {fileID: 2100006, guid: 06c4131835f65024586454416f6b1f66, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flower1_Anther3Mat
+    second: {fileID: 2100006, guid: 06c4131835f65024586454416f6b1f66, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flower1_Anther4Mat
+    second: {fileID: 2100006, guid: 06c4131835f65024586454416f6b1f66, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flower1_Fillament1Mat
+    second: {fileID: 2100002, guid: a0dfaf0497ab5334a99165f16b697e6e, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flower1_Fillament2Mat
+    second: {fileID: 2100002, guid: a0dfaf0497ab5334a99165f16b697e6e, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flower1_Fillament3Mat
+    second: {fileID: 2100002, guid: a0dfaf0497ab5334a99165f16b697e6e, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flower1_Fillament4Mat
+    second: {fileID: 2100002, guid: a0dfaf0497ab5334a99165f16b697e6e, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flower1_Petal2Mat
+    second: {fileID: 2100010, guid: a9853556c4fc4d44087cd153918f7305, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flower1_Petal3Mat
+    second: {fileID: 2100010, guid: a9853556c4fc4d44087cd153918f7305, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flower1_Petal4Mat
+    second: {fileID: 2100010, guid: a9853556c4fc4d44087cd153918f7305, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flower1_Petal5Mat
+    second: {fileID: 2100010, guid: a9853556c4fc4d44087cd153918f7305, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Flower1_SepalMat
+    second: {fileID: 2100010, guid: a9853556c4fc4d44087cd153918f7305, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Petal1_Flower1Mat
+    second: {fileID: 2100010, guid: a9853556c4fc4d44087cd153918f7305, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
