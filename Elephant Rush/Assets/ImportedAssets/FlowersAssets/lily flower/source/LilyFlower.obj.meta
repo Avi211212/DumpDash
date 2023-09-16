@@ -8,72 +8,72 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Flower1_Anther1Mat
-    second: {fileID: 2100006, guid: 06c4131835f65024586454416f6b1f66, type: 3}
+    second: {fileID: 2100010, guid: a9853556c4fc4d44087cd153918f7305, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Flower1_Anther2Mat
-    second: {fileID: 2100006, guid: 06c4131835f65024586454416f6b1f66, type: 3}
+    second: {fileID: 2100010, guid: a9853556c4fc4d44087cd153918f7305, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Flower1_Anther3Mat
-    second: {fileID: 2100006, guid: 06c4131835f65024586454416f6b1f66, type: 3}
+    second: {fileID: 2100010, guid: a9853556c4fc4d44087cd153918f7305, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Flower1_Anther4Mat
-    second: {fileID: 2100006, guid: 06c4131835f65024586454416f6b1f66, type: 3}
+    second: {fileID: 2100010, guid: a9853556c4fc4d44087cd153918f7305, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Flower1_Fillament1Mat
-    second: {fileID: 2100002, guid: a0dfaf0497ab5334a99165f16b697e6e, type: 3}
+    second: {fileID: 2100010, guid: a9853556c4fc4d44087cd153918f7305, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Flower1_Fillament2Mat
-    second: {fileID: 2100002, guid: a0dfaf0497ab5334a99165f16b697e6e, type: 3}
+    second: {fileID: 2100010, guid: a9853556c4fc4d44087cd153918f7305, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Flower1_Fillament3Mat
-    second: {fileID: 2100002, guid: a0dfaf0497ab5334a99165f16b697e6e, type: 3}
+    second: {fileID: 2100010, guid: a9853556c4fc4d44087cd153918f7305, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Flower1_Fillament4Mat
-    second: {fileID: 2100002, guid: a0dfaf0497ab5334a99165f16b697e6e, type: 3}
+    second: {fileID: 2100010, guid: a9853556c4fc4d44087cd153918f7305, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Flower1_Petal2Mat
-    second: {fileID: 2100010, guid: a9853556c4fc4d44087cd153918f7305, type: 3}
+    second: {fileID: 2100010, guid: 598a1f45fefa08846b93be35e98f166e, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Flower1_Petal3Mat
-    second: {fileID: 2100010, guid: a9853556c4fc4d44087cd153918f7305, type: 3}
+    second: {fileID: 2100010, guid: 598a1f45fefa08846b93be35e98f166e, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Flower1_Petal4Mat
-    second: {fileID: 2100010, guid: a9853556c4fc4d44087cd153918f7305, type: 3}
+    second: {fileID: 2100010, guid: 598a1f45fefa08846b93be35e98f166e, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Flower1_Petal5Mat
-    second: {fileID: 2100010, guid: a9853556c4fc4d44087cd153918f7305, type: 3}
+    second: {fileID: 2100010, guid: 598a1f45fefa08846b93be35e98f166e, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Flower1_SepalMat
-    second: {fileID: 2100010, guid: a9853556c4fc4d44087cd153918f7305, type: 3}
+    second: {fileID: 2100010, guid: 598a1f45fefa08846b93be35e98f166e, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Petal1_Flower1Mat
-    second: {fileID: 2100010, guid: a9853556c4fc4d44087cd153918f7305, type: 3}
+    second: {fileID: 2100010, guid: 598a1f45fefa08846b93be35e98f166e, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -105,7 +105,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.8
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -158,7 +158,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.8
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
