@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1309626017089456010}
+  - component: {fileID: 7794904964033639542}
   m_Layer: 0
   m_Name: Flax Flower
   m_TagString: Untagged
@@ -32,6 +33,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7794904964033639542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6189913176669875475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d3602e240a7c92419a5f52841329955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  accessoryName: Flax Flower
+  cost: 0
+  premiumCost: 0
+  accessoryIcon: {fileID: 21300000, guid: abab253b18931477180501a53a8066a4, type: 3}
 --- !u!1001 &9133261048527229235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47,52 +64,52 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7be069bd5e322421d9cc457870214dad,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0.008
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7be069bd5e322421d9cc457870214dad,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.842242
+      value: -0.042
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7be069bd5e322421d9cc457870214dad,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.035
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7be069bd5e322421d9cc457870214dad,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 0.4672975
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7be069bd5e322421d9cc457870214dad,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: 0.046382613
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7be069bd5e322421d9cc457870214dad,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.009177337
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7be069bd5e322421d9cc457870214dad,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.882835
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7be069bd5e322421d9cc457870214dad,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 1.555
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7be069bd5e322421d9cc457870214dad,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 5.193
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7be069bd5e322421d9cc457870214dad,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 124.285
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7be069bd5e322421d9cc457870214dad,
         type: 3}
