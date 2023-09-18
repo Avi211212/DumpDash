@@ -114,7 +114,10 @@ public class LoadoutState : AState
         missionPopup.gameObject.SetActive(false);
         inventoryCanvas.gameObject.SetActive(false);
 
-        if (m_Character != null) Addressables.ReleaseInstance(m_Character);
+        if (m_Character != null)
+        {
+            Addressables.ReleaseInstance(m_Character);
+        }
 
         GameState gs = to as GameState;
 
@@ -164,11 +167,6 @@ public class LoadoutState : AState
                 //we can always enabled, as the parent will be disabled if tutorial is already done
                 tutorialPrompt.SetActive(true);
             }
-        }
-
-        if(m_Character != null)
-        {
-            m_Character.transform.Rotate(0, k_CharacterRotationSpeed * Time.deltaTime, 0, Space.Self);
         }
 
 		charSelect.gameObject.SetActive(PlayerData.instance.characters.Count > 1);
@@ -291,6 +289,7 @@ public class LoadoutState : AState
                         Addressables.ReleaseInstance(m_Character);
 
                     m_Character = newChar;
+                    m_Character.GetComponent<CharacterRotation>().ShouldRotate(true);
                     charNameDisplay.text = c.characterName;
 
                     m_Character.transform.localPosition = Vector3.right * 1000;
@@ -400,6 +399,11 @@ public class LoadoutState : AState
                 PlayerData.instance.ftueLevel = 2;
                 PlayerData.instance.Save();
             }
+        }
+
+        if (m_Character != null)
+        {
+            m_Character.GetComponent<CharacterRotation>().ShouldRotate(false);
         }
 
         manager.SwitchState("Game");

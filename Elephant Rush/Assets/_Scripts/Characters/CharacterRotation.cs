@@ -10,11 +10,17 @@ public class CharacterRotation : MonoBehaviour
     private float initialRotation;
     private Vector3 initialMousePosition;
 
-    private bool isMouseDown = false; 
+    private bool isMouseDown = false;
+    private bool shouldRotate = false;
+
+    public void ShouldRotate(bool value)
+    {
+        shouldRotate = value; 
+    }
 
     private void Update()
     {
-        if(Application.loadedLevelName == "Main")
+        if (shouldRotate)
         {
             RotateCharacter();
         }
