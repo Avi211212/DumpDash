@@ -1784,6 +1784,7 @@ GameObject:
   - component: {fileID: 7941257352333868884}
   - component: {fileID: 8004675475499993970}
   - component: {fileID: 8047098378136925872}
+  - component: {fileID: 7433982628546276925}
   m_Layer: 0
   m_Name: Pogo
   m_TagString: Player
@@ -1952,6 +1953,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixerGroup: SFX
+--- !u!114 &7433982628546276925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7941257352328309548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3e12e4b2e1ed5948b99f6f71d77119b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 0.02
 --- !u!1001 &582609148686313643
 PrefabInstance:
   m_ObjectHideFlags: 0
