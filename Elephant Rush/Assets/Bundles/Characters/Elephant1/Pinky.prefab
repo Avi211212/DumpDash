@@ -1784,6 +1784,7 @@ GameObject:
   - component: {fileID: 8263263750370213288}
   - component: {fileID: 8326680766520576398}
   - component: {fileID: 8301551055175758924}
+  - component: {fileID: 4390181374199914804}
   m_Layer: 0
   m_Name: Pinky
   m_TagString: Player
@@ -1952,6 +1953,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixerGroup: SFX
+--- !u!114 &4390181374199914804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8263263750375664080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3e12e4b2e1ed5948b99f6f71d77119b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 0.02
 --- !u!1001 &298083199417226972
 PrefabInstance:
   m_ObjectHideFlags: 0

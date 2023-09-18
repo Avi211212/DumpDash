@@ -136,8 +136,9 @@ PlayerSettings:
     Others: 1
   bundleVersion: 1.0
   preloadedAssets:
-  - {fileID: 11400000, guid: 5d85beb3bfd9a4620aa1a60bd0b30ee8, type: 2}
+  - {fileID: 0}
   - {fileID: 9149708723971759991, guid: 0c6b1c69be5d34f469ad41e0811b88c9, type: 2}
+  - {fileID: 11400000, guid: d451c08d861d9904891982a42496e1c5, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -895,7 +896,7 @@ PlayerSettings:
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: EndlessRunner
-  metroPackageVersion: 
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -903,7 +904,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: EndlessRunner
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Elephant Rush
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0

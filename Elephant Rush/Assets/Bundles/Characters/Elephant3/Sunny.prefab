@@ -1784,6 +1784,7 @@ GameObject:
   - component: {fileID: 8831843643107293875}
   - component: {fileID: 6568441587611812634}
   - component: {fileID: 4407726862859778283}
+  - component: {fileID: 8912562240436117209}
   m_Layer: 0
   m_Name: Sunny
   m_TagString: Untagged
@@ -1952,6 +1953,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixerGroup: SFX
+--- !u!114 &8912562240436117209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6794879913780349131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3e12e4b2e1ed5948b99f6f71d77119b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 0.02
 --- !u!1001 &137379012327294637
 PrefabInstance:
   m_ObjectHideFlags: 0

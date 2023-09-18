@@ -14,7 +14,10 @@ public class CharacterRotation : MonoBehaviour
 
     private void Update()
     {
-        RotateCharacter();
+        if(Application.loadedLevelName == "Main")
+        {
+            RotateCharacter();
+        }
     }
 
     private void RotateCharacter()
