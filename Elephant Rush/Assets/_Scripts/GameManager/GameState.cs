@@ -23,7 +23,7 @@ public class GameState : AState
     public Canvas canvas;
     public TrackManager trackManager;
 
-	public AudioClip gameTheme;
+	public AudioClip[] gameTheme;
 
     [Header("UI")]
     public Text coinText;
@@ -95,9 +95,11 @@ public class GameState : AState
             m_LifeHearts[i] = lifeRectTransform.GetChild(i).GetComponent<Image>();
         }
 
-        if (MusicPlayer.instance.GetStem(0) != gameTheme)
+        int randomMusicIndex = Random.Range(0, 5);
+
+        if (MusicPlayer.instance.GetStem(0) != gameTheme[randomMusicIndex])
         {
-            MusicPlayer.instance.SetStem(0, gameTheme);
+            MusicPlayer.instance.SetStem(0, gameTheme[randomMusicIndex]);
             CoroutineHandler.StartStaticCoroutine(MusicPlayer.instance.RestartAllStems());
         }
 
