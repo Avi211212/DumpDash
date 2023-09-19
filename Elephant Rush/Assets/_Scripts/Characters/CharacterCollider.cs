@@ -40,6 +40,7 @@ public class CharacterCollider : MonoBehaviour
 	public new AudioSource audio { get { return m_Audio; } }
 
 	public bool hitAttackable = false;
+    public int hitAttackableCount = 0;
 
     [HideInInspector]
 	public List<GameObject> magnetCoins = new List<GameObject>();
@@ -154,6 +155,7 @@ public class CharacterCollider : MonoBehaviour
 				if (c.gameObject.CompareTag("Attackable") && controller.isSliding)
 				{
 					hasAttacked = true;
+                    ++hitAttackableCount;
                 }
                 else
 				{
