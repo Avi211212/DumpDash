@@ -49,7 +49,7 @@ public class LoadoutState : AState
 	public MeshFilter skyMeshFilter;
     public MeshFilter UIGroundFilter;
 
-	public AudioClip menuTheme;
+	public AudioClip[] menuTheme;
 
 
     [Header("Prefabs")]
@@ -90,9 +90,11 @@ public class LoadoutState : AState
         // Reseting the global blinking value. Can happen if the game unexpectedly exited while still blinking
         Shader.SetGlobalFloat("_BlinkingValue", 0.0f);
 
-        if (MusicPlayer.instance.GetStem(0) != menuTheme)
+        int randomMusicIndex = Random.Range(0, 5);
+
+        if (MusicPlayer.instance.GetStem(0) != menuTheme[randomMusicIndex])
 		{
-            MusicPlayer.instance.SetStem(0, menuTheme);
+            MusicPlayer.instance.SetStem(0, menuTheme[randomMusicIndex]);
             StartCoroutine(MusicPlayer.instance.RestartAllStems());
         }
 

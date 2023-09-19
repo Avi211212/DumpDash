@@ -9483,7 +9483,13 @@ MonoBehaviour:
   tutorialPrompt: {fileID: 610653253}
   skyMeshFilter: {fileID: 1222759691}
   UIGroundFilter: {fileID: 517316206}
-  menuTheme: {fileID: 8300000, guid: 1588137430bfbab4b9a00ba3b220b82b, type: 3}
+  menuTheme:
+  - {fileID: 8300000, guid: 79615a253a27a471a9af4399016849c6, type: 3}
+  - {fileID: 8300000, guid: d7d9cecd456954b45aa38ed2979218b2, type: 3}
+  - {fileID: 8300000, guid: a159c112e1b8c4cd3afe0a6c2d32b1c1, type: 3}
+  - {fileID: 8300000, guid: 99bb17983a4b64eadad0e889b7e7f3e9, type: 3}
+  - {fileID: 8300000, guid: 09dd406a647854c3c817388bf3d2bf8a, type: 3}
+  - {fileID: 8300000, guid: 9b335513bcfd14601bc5371867d128af, type: 3}
   consumableIcon: {fileID: 11439736, guid: 0c5f0793b82536342bd64bc3e3fdee8a, type: 3}
 --- !u!1 &878427076
 GameObject:
@@ -14744,7 +14750,13 @@ MonoBehaviour:
   manager: {fileID: 0}
   canvas: {fileID: 1245236424}
   trackManager: {fileID: 1958487560}
-  gameTheme: {fileID: 8300000, guid: b341b9410b3c5274e8b15199f3b95fb5, type: 3}
+  gameTheme:
+  - {fileID: 8300000, guid: e8bbf89da3e4a4494809114d30b94c3a, type: 3}
+  - {fileID: 8300000, guid: 75556fcbdcd504aeead16c54ad869b69, type: 3}
+  - {fileID: 8300000, guid: 262eb6061e3904b74ac6efbd9663ee4e, type: 3}
+  - {fileID: 8300000, guid: 7712ca33098264cd5bf816c3e2cbc23a, type: 3}
+  - {fileID: 8300000, guid: 4f5c6f734f35a4c8dbfd0e5cbe053e7a, type: 3}
+  - {fileID: 8300000, guid: 3c6524e1111f9457a8226b7effbf3d9a, type: 3}
   coinText: {fileID: 50343042}
   premiumText: {fileID: 1226467019}
   scoreText: {fileID: 780872363}
