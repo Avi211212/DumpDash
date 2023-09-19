@@ -207,7 +207,7 @@ public class BarrierJumpMission : MissionBase
 
 public class SlidingMission : MissionBase
 {
-    float m_PreviousWorldDist;
+    float previousAttackableCount;
 
     public override void Created()
     {
@@ -221,7 +221,7 @@ public class SlidingMission : MissionBase
 
     public override string GetMissionDesc()
     {
-        return "Slide for " + ((int)max) + "m";
+        return "Attack " + ((int)max) + " Obstacles";
     }
 
     public override MissionType GetMissionType()
@@ -231,18 +231,17 @@ public class SlidingMission : MissionBase
 
     public override void RunStart(TrackManager manager)
     {
-        m_PreviousWorldDist = manager.worldDistance;
+        progress = previousAttackableCount;
     }
 
     public override void Update(TrackManager manager)
     {
         if(manager.characterController.isSliding)
         {
-            float dist = manager.worldDistance - m_PreviousWorldDist;
-            progress += dist;
+            progress = manager.characterController.characterCollider.hitAttackableCount;
+            UnityEngine.Debug.Log("Progress : " + progress);
+            previousAttackableCount = progress;
         }
-
-        m_PreviousWorldDist = manager.worldDistance;
     }
 }
 

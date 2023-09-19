@@ -39,6 +39,8 @@ public class GameOverState : AState
 
 		CreditCoins();
 
+        trackManager.characterController.characterCollider.hitAttackableCount = 0;
+
 		if (MusicPlayer.instance.GetStem(0) != gameOverTheme)
 		{
             MusicPlayer.instance.SetStem(0, gameOverTheme);
