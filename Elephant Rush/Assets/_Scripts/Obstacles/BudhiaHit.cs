@@ -6,8 +6,14 @@ using UnityEngine;
 public class BudhiaHit : MonoBehaviour
 {
     [SerializeField] private Animator animator;
-    [SerializeField] private Rigidbody rigidbody;
     [SerializeField] private float force = 100f;
+
+    private new Rigidbody rigidbody;
+
+    private void Awake()
+    {
+        rigidbody = GetComponent<Rigidbody>();
+    }
 
     private void OnTriggerEnter(Collider collision)
     {

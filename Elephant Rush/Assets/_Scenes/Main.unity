@@ -1630,6 +1630,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1421208009449374, guid: fc9855a6b2a67364ebc0db28e7bbc98b, type: 3}
+      propertyPath: m_Name
+      value: MusicPlayer
+      objectReference: {fileID: 0}
     - target: {fileID: 4122528372401330, guid: fc9855a6b2a67364ebc0db28e7bbc98b, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1661,6 +1665,23 @@ PrefabInstance:
     - target: {fileID: 4122528372401330, guid: fc9855a6b2a67364ebc0db28e7bbc98b, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122528372401330, guid: fc9855a6b2a67364ebc0db28e7bbc98b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122528372401330, guid: fc9855a6b2a67364ebc0db28e7bbc98b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122528372401330, guid: fc9855a6b2a67364ebc0db28e7bbc98b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114322282601092784, guid: fc9855a6b2a67364ebc0db28e7bbc98b,
+        type: 3}
+      propertyPath: stems.Array.data[0].clip
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc9855a6b2a67364ebc0db28e7bbc98b, type: 3}
@@ -13758,6 +13779,7 @@ MonoBehaviour:
   coinSound: {fileID: 8300000, guid: 62c15b4aac9d60e4a963f4f55d31e706, type: 3}
   premiumSound: {fileID: 8300000, guid: 553f1d03da54003479f6ff63d3155919, type: 3}
   hitAttackable: 0
+  hitAttackableCount: 0
   magnetCoins: []
 --- !u!82 &1144878500
 AudioSource:
