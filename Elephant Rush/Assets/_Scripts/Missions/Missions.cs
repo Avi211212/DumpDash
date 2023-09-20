@@ -207,8 +207,6 @@ public class BarrierJumpMission : MissionBase
 
 public class SlidingMission : MissionBase
 {
-    float previousAttackableCount;
-
     public override void Created()
     {
         float[] maxValues = { 20, 30, 75, 150};
@@ -231,7 +229,6 @@ public class SlidingMission : MissionBase
 
     public override void RunStart(TrackManager manager)
     {
-        progress = previousAttackableCount;
     }
 
     public override void Update(TrackManager manager)
@@ -239,8 +236,6 @@ public class SlidingMission : MissionBase
         if(manager.characterController.isSliding)
         {
             progress = manager.characterController.characterCollider.hitAttackableCount;
-            UnityEngine.Debug.Log("Progress : " + progress);
-            previousAttackableCount = progress;
         }
     }
 }
