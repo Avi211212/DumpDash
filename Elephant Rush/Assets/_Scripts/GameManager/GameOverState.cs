@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Analytics;
 #if UNITY_ANALYTICS
 using UnityEngine.Analytics;
 #endif
@@ -21,11 +22,15 @@ public class GameOverState : AState
 
     public GameObject addButton;
 
+    public ShareScreen shareScreen;
+
     public override void Enter(AState from)
     {
         Camera.main.transform.SetParent(null, true);
 
         canvas.gameObject.SetActive(true);
+
+        PopulateShareScreen();
 
 		miniLeaderboard.playerEntry.inputName.text = PlayerData.instance.previousName;
 		
@@ -59,9 +64,32 @@ public class GameOverState : AState
         return "GameOver";
     }
 
-    public override void Tick()
+    public override void Tick() { }
+
+    public void PopulateShareScreen()
     {
-        
+        shareScreen.gameObject.SetActive(true);
+        shareScreen.characterName.text = trackManager.characterController.character.characterName;
+        shareScreen.score.text = "Score : " + trackManager.score.ToString();
+        shareScreen.playerName.text = PlayerData.instance.previousName;
+        //trackManager.characterController.character.gameObject.transform.SetParent(shareScreen.characterPosition, false);
+    }    
+
+    public void Share()
+    {
+        ScreenCapture.CaptureScreenshot("ShareScreen.png");
+
+        //string text = "I just scored " + trackManager.score + " points in Indian Elephant Rush! Can you beat me?";
+
+        //string url = "https://play.google.com/store/apps/details?id=com.unity3d.Elephantrun";
+
+        //new NativeShare().SetSubject("Budhia Run").SetText(text).SetUrl(url).Share();
+    }
+
+    public void Return()
+    {
+        trackManager.characterController.character.gameObject.transform.SetParent(null, false);
+        shareScreen.gameObject.SetActive(false);
     }
 
 	public void OpenLeaderboard()
