@@ -410,21 +410,6 @@ MonoBehaviour:
   - source: {fileID: 82094754644436538}
     clip: {fileID: 8300000, guid: e8bbf89da3e4a4494809114d30b94c3a, type: 3}
     startingSpeedRatio: -0.1
-  - source: {fileID: 82769153576646700}
-    clip: {fileID: 8300000, guid: fc0811928bd2d9d449d4eae17f4f4b3d, type: 3}
-    startingSpeedRatio: 0.15
-  - source: {fileID: 82452598859346016}
-    clip: {fileID: 8300000, guid: 86dbdb689ba140a468dbe99cc86b550c, type: 3}
-    startingSpeedRatio: 0.275
-  - source: {fileID: 82091826566302258}
-    clip: {fileID: 8300000, guid: e332926f9f9720947b646c7c3c65902f, type: 3}
-    startingSpeedRatio: 0.35
-  - source: {fileID: 82844147844963420}
-    clip: {fileID: 8300000, guid: e5b9826496c6c0141801fef8a5a0eeab, type: 3}
-    startingSpeedRatio: 0.475
-  - source: {fileID: 82722693733739582}
-    clip: {fileID: 8300000, guid: 37d5e1f1666e7f643891a80f6d37b371, type: 3}
-    startingSpeedRatio: 0.6
   maxVolume: 1
 --- !u!1 &1473493653886274
 GameObject:
