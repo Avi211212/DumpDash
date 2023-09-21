@@ -116,7 +116,8 @@ public class PlayerData
     public void AddMission()
     {
         int val = Random.Range(0, (int)MissionBase.MissionType.MAX);
-        
+
+
         MissionBase newMission = MissionBase.GetNewMissionFromType((MissionBase.MissionType)val);
         newMission.Created();
 
