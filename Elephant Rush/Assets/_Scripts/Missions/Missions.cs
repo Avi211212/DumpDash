@@ -150,7 +150,7 @@ public class BarrierJumpMission : MissionBase
     Collider[] m_Hits;
 
     protected const int k_HitColliderCount = 8;
-    protected readonly Vector3 k_CharacterColliderSizeOffset = new Vector3(-0.3f, 2f, -0.3f);
+    protected readonly Vector3 k_CharacterColliderSizeOffset = new Vector3(0.0f, 2f, -0.3f);
     
     public override void Created()
     {
@@ -183,7 +183,7 @@ public class BarrierJumpMission : MissionBase
         if(manager.characterController.isJumping)
         {
             Vector3 boxSize = manager.characterController.characterCollider.collider.size + k_CharacterColliderSizeOffset;
-            Vector3 boxCenter = manager.characterController.transform.position - Vector3.up * boxSize.y * 0.5f;
+            Vector3 boxCenter = manager.characterController.character.transform.position - Vector3.up * boxSize.y * 0.5f;
 
             int count = Physics.OverlapBoxNonAlloc(boxCenter, boxSize * 0.5f, m_Hits);
 
@@ -191,7 +191,7 @@ public class BarrierJumpMission : MissionBase
             {
                 Obstacle obs = m_Hits[i].GetComponent<Obstacle>();
 
-                if(obs != null && obs is AllLaneObstacle)
+                if(obs != null && obs is SimpleBarricade)
                 {
                     if(obs != m_Previous)
                     {

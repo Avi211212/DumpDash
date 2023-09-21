@@ -54,6 +54,8 @@ public class TrackManager : MonoBehaviour
     [Header("Parallax")]
     public Transform parallaxRoot;
     public float parallaxRatio = 0.5f;
+    [SerializeField] private Vector3 cameraGamePosition;
+    [SerializeField] private Vector3 cameraGameRotation;
 
     [Header("Tutorial")]
     public ThemeData tutorialThemeData;
@@ -214,6 +216,9 @@ public class TrackManager : MonoBehaviour
             //Instantiate(CharacterDatabase.GetCharacter(PlayerData.instance.characters[PlayerData.instance.usedCharacter]), Vector3.zero, Quaternion.identity);
             player.transform.SetParent(characterController.characterCollider.transform, false);
             Camera.main.transform.SetParent(player.transform, true);
+            Camera.main.transform.localPosition = cameraGamePosition;
+            Camera.main.transform.localRotation = Quaternion.Euler(cameraGameRotation);
+            
 
             if (m_IsTutorial)
                 m_CurrentThemeData = tutorialThemeData;
@@ -280,6 +285,7 @@ public class TrackManager : MonoBehaviour
 
         Camera.main.transform.SetParent(null);
         Camera.main.transform.position = m_CameraOriginalPos;
+        Camera.main.transform.rotation = Quaternion.Euler(new Vector3(15.0f,0,0));
 
         characterController.gameObject.SetActive(false);
 
