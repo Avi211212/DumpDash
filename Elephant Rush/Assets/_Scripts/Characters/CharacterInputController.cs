@@ -130,6 +130,7 @@ public class CharacterInputController : MonoBehaviour
 
 	public void End()
 	{
+        character.runningVFX.SetActive(false);
         CleanConsumable();
     }
 
@@ -147,6 +148,7 @@ public class CharacterInputController : MonoBehaviour
     public void StartRunning()
     {   
 	    StartMoving();
+		character.runningVFX.SetActive(true);
         if (character.animator)
         {
             character.animator.Play(s_RunStartHash);

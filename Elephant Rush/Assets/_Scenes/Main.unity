@@ -31847,6 +31847,7 @@ MonoBehaviour:
   characterCollider: {fileID: 1144878499}
   blobShadow: {fileID: 184212906}
   laneChangeSpeed: 14
+  runningVFX: {fileID: 1588384315933098, guid: d89152accb676bd46bb8c89edc6c10b8, type: 3}
   maxLife: 3
   inventory: {fileID: 0}
   jumpLength: 6

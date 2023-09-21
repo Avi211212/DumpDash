@@ -14,6 +14,7 @@ public class Character : MonoBehaviour
 
 	public CharacterAccessories[] accessories;
 
+    public GameObject runningVFX;
     public Animator animator;
 	public Sprite icon;
 
