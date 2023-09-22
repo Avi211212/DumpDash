@@ -1,12 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Collections.Specialized;
 using UnityEngine;
 
 public class BudhiaHit : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private float force = 100f;
+
+    private bool isHit = false;
 
     private new Rigidbody rigidbody;
 
@@ -17,8 +17,9 @@ public class BudhiaHit : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (!isHit && collision.gameObject.CompareTag("Player"))
         {
+            isHit = true;
             rigidbody.AddForce(Vector3.forward * force);
             animator.SetTrigger("Hit");
             StartCoroutine(QuitBudhiaMovement());

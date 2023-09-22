@@ -50,7 +50,7 @@ public class PlayerData
     public bool licenceAccepted;
     public bool tutorialDone;
 
-	public float masterVolume = float.MinValue, musicVolume = float.MinValue, masterSFXVolume = float.MinValue;
+	public float masterVolume = 0.0f, musicVolume = 0.0f, masterSFXVolume = 0.0f;
 
     //ftue = First Time User Expeerience. This var is used to track thing a player do for the first time. It increment everytime the user do one of the step
     //e.g. it will increment to 1 when they click Start, to 2 when doing the first run, 3 when running at least 300m etc.
