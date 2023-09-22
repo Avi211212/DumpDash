@@ -17,7 +17,7 @@ public class SettingPopup : MonoBehaviour
     protected float m_MusicVolume;
     protected float m_MasterSFXVolume;
 
-    protected const float k_MinVolume = -80f;
+    protected const float k_MinVolume = -20f;
     protected const string k_MasterVolumeFloatName = "MasterVolume";
     protected const string k_MusicVolumeFloatName = "MusicVolume";
     protected const string k_MasterSFXVolumeFloatName = "MasterSFXVolume";
