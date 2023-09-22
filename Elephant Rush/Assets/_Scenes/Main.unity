@@ -25496,7 +25496,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ba60e6d96e4ecc44cad150a2e5a5d367, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5fee101343fc344ad97f580e1420775d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -31847,7 +31847,6 @@ MonoBehaviour:
   characterCollider: {fileID: 1144878499}
   blobShadow: {fileID: 184212906}
   laneChangeSpeed: 14
-  runningVFX: {fileID: 1588384315933098, guid: d89152accb676bd46bb8c89edc6c10b8, type: 3}
   maxLife: 3
   inventory: {fileID: 0}
   jumpLength: 6
