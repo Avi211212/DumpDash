@@ -254,7 +254,7 @@ public class LoadoutState : AState
                     m_OwnedAccesories.Clear();
                     for (int i = 0; i < c.accessories.Length; ++i)
                     {
-						// Check which accessories we own.
+                        // Check which accessories we own.
                         string compoundName = c.accessories[i].accessoryName;
                         if (PlayerData.instance.characterAccessories.Contains(compoundName))
                         {
@@ -284,7 +284,7 @@ public class LoadoutState : AState
                     }
                     newChar = op.Result as GameObject;
                     Helpers.SetRendererLayerRecursive(newChar, k_UILayer);
-					newChar.transform.SetParent(charPosition, false);
+                    newChar.transform.SetParent(charPosition, false);
                     newChar.transform.rotation = k_FlippedYAxisRotation;
 
                     if (m_Character != null)
@@ -293,18 +293,14 @@ public class LoadoutState : AState
                     m_Character = newChar;
                     m_Character.GetComponent<CharacterRotation>().ShouldRotate(true);
                     charNameDisplay.text = c.characterName;
-
-                    m_Character.transform.localPosition = Vector3.right * 1000;
-                    //animator will take a frame to initialize, during which the character will be in a T-pose.
-                    //So we move the character off screen, wait that initialised frame, then move the character back in place.
-                    //That avoid an ugly "T-pose" flash time
-                    yield return new WaitForEndOfFrame();
                     m_Character.transform.localPosition = Vector3.zero;
 
                     SetupAccessory();
                 }
                 else
+                { 
                     yield return new WaitForSeconds(1.0f);
+                }
             }
             m_IsLoadingCharacter = false;
         }

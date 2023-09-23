@@ -1800,7 +1800,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2375626923463640653}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 100, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1839,7 +1839,6 @@ MonoBehaviour:
   - {fileID: 2169707409084022085}
   - {fileID: 5023857132723141693}
   - {fileID: 4957605689829661857}
-  runningVFX: {fileID: 0}
   animator: {fileID: 1395914467003758969}
   icon: {fileID: 21300000, guid: 548a76a5ce1e6452e9e4e5fd597122ce, type: 3}
   jumpSound: {fileID: 8300000, guid: 23ffb4e3b28e54a48a1cfe419846578d, type: 3}
