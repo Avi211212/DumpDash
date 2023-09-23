@@ -1784,7 +1784,6 @@ GameObject:
   - component: {fileID: -5195005953842673270}
   - component: {fileID: 4367647060447374360}
   - component: {fileID: -1544271519364362467}
-  - component: {fileID: -9034042002463385674}
   m_Layer: 0
   m_Name: Khan
   m_TagString: Player
@@ -1844,6 +1843,7 @@ MonoBehaviour:
   jumpSound: {fileID: 8300000, guid: 23ffb4e3b28e54a48a1cfe419846578d, type: 3}
   hitSound: {fileID: 8300000, guid: f51ebf35391cc054196ade4a6d9be7a9, type: 3}
   deathSound: {fileID: 8300000, guid: 54e2a8da2acab43c0ace59ada14d3d34, type: 3}
+  rotationSpeed: 0.02
 --- !u!82 &4367647060447374360
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1953,19 +1953,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixerGroup: SFX
---- !u!114 &-9034042002463385674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7809377514346920709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3e12e4b2e1ed5948b99f6f71d77119b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 0.02
 --- !u!1001 &516506461186867579
 PrefabInstance:
   m_ObjectHideFlags: 0

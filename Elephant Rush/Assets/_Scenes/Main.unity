@@ -10629,6 +10629,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 09dd406a647854c3c817388bf3d2bf8a, type: 3}
   - {fileID: 8300000, guid: 9b335513bcfd14601bc5371867d128af, type: 3}
   consumableIcon: {fileID: 11439736, guid: 0c5f0793b82536342bd64bc3e3fdee8a, type: 3}
+  character: {fileID: 0}
 --- !u!1 &878427076
 GameObject:
   m_ObjectHideFlags: 0
@@ -24538,6 +24539,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000011972273750, guid: a53fe2875371488408daf0df7d69a981,
+        type: 3}
+      propertyPath: loadoutState
+      value: 
+      objectReference: {fileID: 869760749}
     - target: {fileID: 114000011972273750, guid: a53fe2875371488408daf0df7d69a981,
         type: 3}
       propertyPath: missionEntryPrefab.m_AssetGUID

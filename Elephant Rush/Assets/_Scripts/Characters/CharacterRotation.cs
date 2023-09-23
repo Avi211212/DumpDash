@@ -1,13 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
 
 public class CharacterRotation : MonoBehaviour
-{
+{ 
     public float rotationSpeed = 360f;
 
-    private float initialRotation;
     private Vector3 initialMousePosition;
 
     private bool isMouseDown = false;
@@ -41,8 +37,7 @@ public class CharacterRotation : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, -deltaTouchPosition * rotationSpeed, 0) * transform.rotation;
         }
 
-#if UNITY_EDITOR
-        
+#if UNITY_EDITOR     
         if (Input.GetMouseButtonDown(0))
         {
             isMouseDown = true;
@@ -61,7 +56,6 @@ public class CharacterRotation : MonoBehaviour
 
             transform.rotation = Quaternion.Euler(0, -deltaMousePosition * rotationSpeed, 0) * transform.rotation;
         }
-
 #endif
     }
 
