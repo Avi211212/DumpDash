@@ -32,7 +32,7 @@ public class SettingPopup : MonoBehaviour
     public void Close()
     {
         loadoutState.character.ShouldRotate(true);
-        PlayerData.instance.Save ();
+        PlayerData.instance.Save();
         gameObject.SetActive(false);
     }
 
