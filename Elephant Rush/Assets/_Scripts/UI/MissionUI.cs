@@ -5,12 +5,15 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class MissionUI : MonoBehaviour
 {
+    public LoadoutState loadoutState;
+
     public RectTransform missionPlace;
     public AssetReference missionEntryPrefab;
     public AssetReference addMissionButtonPrefab;
 
     public IEnumerator Open()
     {
+        loadoutState.character.ShouldRotate(false);
         gameObject.SetActive(true);
 
         foreach (Transform t in missionPlace)
@@ -63,6 +66,7 @@ public class MissionUI : MonoBehaviour
 
     public void Close()
     {
+        loadoutState.character.ShouldRotate(true);
         gameObject.SetActive(false);
     }
 }

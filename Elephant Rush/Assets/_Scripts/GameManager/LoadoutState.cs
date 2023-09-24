@@ -51,11 +51,12 @@ public class LoadoutState : AState
 
 	public AudioClip[] menuTheme;
 
-
     [Header("Prefabs")]
     public ConsumableIcon consumableIcon;
 
     Consumable.ConsumableType m_PowerupToUse = Consumable.ConsumableType.NONE;
+
+    public Character character;
 
     protected GameObject m_Character;
     protected List<int> m_OwnedAccesories = new List<int>();
@@ -291,7 +292,8 @@ public class LoadoutState : AState
                         Addressables.ReleaseInstance(m_Character);
 
                     m_Character = newChar;
-                    m_Character.GetComponent<CharacterRotation>().ShouldRotate(true);
+                    character = newChar.GetComponent<Character>();
+                    character.ShouldRotate(true);
                     charNameDisplay.text = c.characterName;
                     m_Character.transform.localPosition = Vector3.zero;
 
@@ -399,9 +401,9 @@ public class LoadoutState : AState
             }
         }
 
-        if (m_Character != null)
+        if (character)
         {
-            m_Character.GetComponent<CharacterRotation>().ShouldRotate(false);
+            character.ShouldRotate(false);
         }
 
         manager.SwitchState("Game");

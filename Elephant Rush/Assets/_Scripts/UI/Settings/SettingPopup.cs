@@ -24,13 +24,15 @@ public class SettingPopup : MonoBehaviour
     
     public void Open()
     {
+        loadoutState.character.ShouldRotate(false);
         gameObject.SetActive(true);
         UpdateUI();
     }
 
     public void Close()
     {
-		PlayerData.instance.Save ();
+        loadoutState.character.ShouldRotate(true);
+        PlayerData.instance.Save();
         gameObject.SetActive(false);
     }
 
