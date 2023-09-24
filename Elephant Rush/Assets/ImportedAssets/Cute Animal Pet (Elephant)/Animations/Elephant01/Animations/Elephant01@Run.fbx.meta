@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cdf81d69fbd33c2489e332b8db7bf980
+guid: 9856dd50dba6fe9458d78b75fe8001da
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
@@ -293,7 +293,7 @@ ModelImporter:
     second: Elephant_01_3
   - first:
       74: 7400000
-    second: Sleep
+    second: Run
   - first:
       95: 9500000
     second: //RootNode
@@ -334,7 +334,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -343,11 +343,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Sleep
+      name: Run
       takeName: C4D Animation Take
       internalID: 0
       firstFrame: 0
-      lastFrame: 80
+      lastFrame: 15
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -434,9 +434,9 @@ ModelImporter:
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 1
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cdf81d69fbd33c2489e332b8db7bf980
+guid: ecc0db191942a884f96cad7f0f08ab7c
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
@@ -139,6 +139,12 @@ ModelImporter:
       1: 100088
     second: Skin
   - first:
+      1: 100090
+    second: Elephant_Eye
+  - first:
+      1: 100092
+    second: Skin_2
+  - first:
       4: 400000
     second: Bip001
   - first:
@@ -274,6 +280,12 @@ ModelImporter:
       4: 400088
     second: Skin
   - first:
+      4: 400090
+    second: Elephant_Eye
+  - first:
+      4: 400092
+    second: Skin_2
+  - first:
       21: 2100000
     second: shadow
   - first:
@@ -292,8 +304,11 @@ ModelImporter:
       43: 4300002
     second: Elephant_01_3
   - first:
+      43: 4300004
+    second: Elephant_Eye
+  - first:
       74: 7400000
-    second: Sleep
+    second: Walk
   - first:
       95: 9500000
     second: //RootNode
@@ -303,12 +318,20 @@ ModelImporter:
   - first:
       137: 13700000
     second: Elephant_01_3
+  - first:
+      137: 13700002
+    second: Elephant_Eye
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: mat_Elephant01
     second: {fileID: 2100000, guid: 138c04b07b2e9ac44be8b3a6484a4fe6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_Face
+    second: {fileID: 2100000, guid: 249640d1748f4fc4c90916e3d3b37fe6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -334,7 +357,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -343,11 +366,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Sleep
+      name: Walk
       takeName: C4D Animation Take
       internalID: 0
       firstFrame: 0
-      lastFrame: 80
+      lastFrame: 25
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -434,9 +457,9 @@ ModelImporter:
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 1
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
