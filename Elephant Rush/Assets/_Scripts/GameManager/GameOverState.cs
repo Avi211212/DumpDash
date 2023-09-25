@@ -24,6 +24,16 @@ public class GameOverState : AState
 
     public ShareScreen shareScreen;
 
+    [SerializeField] private GameObject gameOverText;
+    [SerializeField] private GameObject highScore;
+    [SerializeField] private GameObject leaderboardButton;
+    [SerializeField] private GameObject loadoutButton;
+    [SerializeField] private GameObject runAgainButton;
+    [SerializeField] private GameObject storeButton;
+    [SerializeField] private GameObject missionsButton;
+
+    private GameObject shareScreenImage;
+
     public override void Enter(AState from)
     {
         Camera.main.transform.SetParent(null, true);
@@ -31,26 +41,6 @@ public class GameOverState : AState
         canvas.gameObject.SetActive(true);
 
         PopulateShareScreen();
-
-		miniLeaderboard.playerEntry.inputName.text = PlayerData.instance.previousName;
-		
-		miniLeaderboard.playerEntry.score.text = trackManager.score.ToString();
-		miniLeaderboard.Populate();
-
-        if (PlayerData.instance.AnyMissionComplete())
-            StartCoroutine(missionPopup.Open());
-        else
-            missionPopup.gameObject.SetActive(false);
-
-		CreditCoins();
-
-        trackManager.characterController.characterCollider.hitAttackableCount = 0;
-
-		if (MusicPlayer.instance.GetStem(0) != gameOverTheme)
-		{
-            MusicPlayer.instance.SetStem(0, gameOverTheme);
-			StartCoroutine(MusicPlayer.instance.RestartAllStems());
-        }
     }
 
 	public override void Exit(AState to)
@@ -68,12 +58,25 @@ public class GameOverState : AState
 
     public void PopulateShareScreen()
     {
+        gameOverText.SetActive(false);
+        highScore.SetActive(false);
+        leaderboardButton.SetActive(false);
+        loadoutButton.SetActive(false);
+        runAgainButton.SetActive(false);
+        storeButton.SetActive(false);
+        missionsButton.SetActive(false);
+
         shareScreen.gameObject.SetActive(true);
         shareScreen.characterName.text = trackManager.characterController.character.characterName;
         shareScreen.score.text = "Score : " + trackManager.score.ToString();
         shareScreen.playerName.text = PlayerData.instance.previousName;
-        //trackManager.characterController.character.gameObject.transform.SetParent(shareScreen.characterPosition, false);
-    }    
+        shareScreenImage = Instantiate(shareScreen.shareScreenImage, Camera.main.transform, false);
+        shareScreenImage.transform.localPosition = Camera.main.transform.forward * 5.0f;
+
+        trackManager.characterController.character.gameObject.transform.SetParent(Camera.main.transform, false);
+        trackManager.characterController.character.gameObject.transform.localPosition = Camera.main.transform.forward * 5.0f ;
+        trackManager.characterController.character.animator.SetTrigger("ShareScreen");
+    }
 
     public void Share()
     {
@@ -89,7 +92,36 @@ public class GameOverState : AState
     public void Return()
     {
         trackManager.characterController.character.gameObject.transform.SetParent(null, false);
+        shareScreenImage.SetActive(false);
         shareScreen.gameObject.SetActive(false);
+
+        gameOverText.SetActive(true);
+        highScore.SetActive(true);
+        leaderboardButton.SetActive(true);
+        loadoutButton.SetActive(true);
+        runAgainButton.SetActive(true);
+        storeButton.SetActive(true);
+        missionsButton.SetActive(true);
+
+        miniLeaderboard.playerEntry.inputName.text = PlayerData.instance.previousName;
+
+        miniLeaderboard.playerEntry.score.text = trackManager.score.ToString();
+        miniLeaderboard.Populate();
+
+        if (PlayerData.instance.AnyMissionComplete())
+            StartCoroutine(missionPopup.Open());
+        else
+            missionPopup.gameObject.SetActive(false);
+
+        CreditCoins();
+
+        trackManager.characterController.characterCollider.hitAttackableCount = 0;
+
+        if (MusicPlayer.instance.GetStem(0) != gameOverTheme)
+        {
+            MusicPlayer.instance.SetStem(0, gameOverTheme);
+            StartCoroutine(MusicPlayer.instance.RestartAllStems());
+        }
     }
 
 	public void OpenLeaderboard()
