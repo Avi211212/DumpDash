@@ -56,12 +56,13 @@ public class GameOverState : AState
         gameOverObjects.SetActive(false);
         gameOverImage.enabled = false;
 
+        Camera.main.transform.position = new Vector3(0.0f, 13.0f, -20.0f);
         shareScreen.gameObject.SetActive(true);
         shareScreen.characterName.text = trackManager.characterController.character.characterName;
         shareScreen.score.text = "Score : " + trackManager.score.ToString();
         shareScreen.playerName.text = PlayerData.instance.previousName;
         shareScreenImage = Instantiate(shareScreen.shareScreenImage, Camera.main.transform, false);
-        shareScreenImage.transform.localPosition = Camera.main.transform.forward * 5.0f;
+        shareScreenImage.transform.localPosition = new Vector3(0.0f, 0.0f, 13.66f);
 
         Character character = trackManager.characterController.character;
         character.animator.SetTrigger("ShareScreen");
