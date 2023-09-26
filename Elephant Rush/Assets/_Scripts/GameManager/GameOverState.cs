@@ -24,6 +24,7 @@ public class GameOverState : AState
 
     public ShareScreen shareScreen;
 
+    [SerializeField] private Image gameOverImage;
     [SerializeField] private GameObject gameOverObjects;
 
     private GameObject shareScreenImage;
@@ -53,6 +54,7 @@ public class GameOverState : AState
     public void PopulateShareScreen()
     {
         gameOverObjects.SetActive(false);
+        gameOverImage.enabled = false;
 
         shareScreen.gameObject.SetActive(true);
         shareScreen.characterName.text = trackManager.characterController.character.characterName;
@@ -61,9 +63,13 @@ public class GameOverState : AState
         shareScreenImage = Instantiate(shareScreen.shareScreenImage, Camera.main.transform, false);
         shareScreenImage.transform.localPosition = Camera.main.transform.forward * 5.0f;
 
-        trackManager.characterController.character.gameObject.transform.SetParent(Camera.main.transform, false);
-        trackManager.characterController.character.gameObject.transform.localPosition = Camera.main.transform.forward * 5.0f ;
-        trackManager.characterController.character.animator.SetTrigger("ShareScreen");
+        Character character = trackManager.characterController.character;
+        character.animator.SetTrigger("ShareScreen");
+        character.gameObject.transform.SetParent(Camera.main.transform, false);
+        character.gameObject.transform.localPosition = new Vector3(0.0f, -0.5f, 4.0f);
+        character.gameObject.transform.localRotation = Quaternion.Euler(4.0f,-180.0f,0.0f);
+        character.gameObject.transform.localScale = Vector3.one * 0.75f;
+        
     }
 
     public void Share()
@@ -83,6 +89,7 @@ public class GameOverState : AState
         shareScreenImage.SetActive(false);
         shareScreen.gameObject.SetActive(false);
 
+        gameOverImage.enabled = true;
         gameOverObjects.SetActive(true);
 
         miniLeaderboard.playerEntry.inputName.text = PlayerData.instance.previousName;
