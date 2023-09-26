@@ -24,6 +24,11 @@ public class GameOverState : AState
 
     public ShareScreen shareScreen;
 
+    [SerializeField] private Image gameOverImage;
+    [SerializeField] private GameObject gameOverObjects;
+
+    private GameObject shareScreenImage;
+
     public override void Enter(AState from)
     {
         Camera.main.transform.SetParent(null, true);
@@ -31,26 +36,6 @@ public class GameOverState : AState
         canvas.gameObject.SetActive(true);
 
         PopulateShareScreen();
-
-		miniLeaderboard.playerEntry.inputName.text = PlayerData.instance.previousName;
-		
-		miniLeaderboard.playerEntry.score.text = trackManager.score.ToString();
-		miniLeaderboard.Populate();
-
-        if (PlayerData.instance.AnyMissionComplete())
-            StartCoroutine(missionPopup.Open());
-        else
-            missionPopup.gameObject.SetActive(false);
-
-		CreditCoins();
-
-        trackManager.characterController.characterCollider.hitAttackableCount = 0;
-
-		if (MusicPlayer.instance.GetStem(0) != gameOverTheme)
-		{
-            MusicPlayer.instance.SetStem(0, gameOverTheme);
-			StartCoroutine(MusicPlayer.instance.RestartAllStems());
-        }
     }
 
 	public override void Exit(AState to)
@@ -68,12 +53,26 @@ public class GameOverState : AState
 
     public void PopulateShareScreen()
     {
+        gameOverObjects.SetActive(false);
+        gameOverImage.enabled = false;
+
+        Camera.main.transform.position = new Vector3(0.0f, 13.0f, -20.0f);
         shareScreen.gameObject.SetActive(true);
         shareScreen.characterName.text = trackManager.characterController.character.characterName;
         shareScreen.score.text = "Score : " + trackManager.score.ToString();
         shareScreen.playerName.text = PlayerData.instance.previousName;
-        //trackManager.characterController.character.gameObject.transform.SetParent(shareScreen.characterPosition, false);
-    }    
+        shareScreenImage = Instantiate(shareScreen.shareScreenImage, Camera.main.transform, false);
+        shareScreenImage.transform.localPosition = new Vector3(0.0f, 0.0f, 13.66f);
+
+        Character character = trackManager.characterController.character;
+        character.SwitchEyes();
+        character.animator.SetTrigger("ShareScreen");
+        character.gameObject.transform.SetParent(Camera.main.transform, false);
+        character.gameObject.transform.localPosition = new Vector3(0.0f, -0.5f, 4.0f);
+        character.gameObject.transform.localRotation = Quaternion.Euler(4.0f,-180.0f,0.0f);
+        character.gameObject.transform.localScale = Vector3.one * 0.75f;
+        
+    }
 
     public void Share()
     {
@@ -89,7 +88,31 @@ public class GameOverState : AState
     public void Return()
     {
         trackManager.characterController.character.gameObject.transform.SetParent(null, false);
+        shareScreenImage.SetActive(false);
         shareScreen.gameObject.SetActive(false);
+
+        gameOverImage.enabled = true;
+        gameOverObjects.SetActive(true);
+
+        miniLeaderboard.playerEntry.inputName.text = PlayerData.instance.previousName;
+
+        miniLeaderboard.playerEntry.score.text = trackManager.score.ToString();
+        miniLeaderboard.Populate();
+
+        if (PlayerData.instance.AnyMissionComplete())
+            StartCoroutine(missionPopup.Open());
+        else
+            missionPopup.gameObject.SetActive(false);
+
+        CreditCoins();
+
+        trackManager.characterController.characterCollider.hitAttackableCount = 0;
+
+        if (MusicPlayer.instance.GetStem(0) != gameOverTheme)
+        {
+            MusicPlayer.instance.SetStem(0, gameOverTheme);
+            StartCoroutine(MusicPlayer.instance.RestartAllStems());
+        }
     }
 
 	public void OpenLeaderboard()

@@ -1844,6 +1844,8 @@ MonoBehaviour:
   hitSound: {fileID: 8300000, guid: f51ebf35391cc054196ade4a6d9be7a9, type: 3}
   deathSound: {fileID: 8300000, guid: 54e2a8da2acab43c0ace59ada14d3d34, type: 3}
   rotationSpeed: 0.02
+  eyeMesh: {fileID: 1395914467008022459}
+  eyeMaterialSmiling: {fileID: 2100000, guid: 9ee90eb73f9abef45b255d9cdab2965c, type: 2}
 --- !u!82 &8073661917115912528
 AudioSource:
   m_ObjectHideFlags: 0
