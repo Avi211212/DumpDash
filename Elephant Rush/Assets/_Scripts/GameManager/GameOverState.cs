@@ -24,13 +24,7 @@ public class GameOverState : AState
 
     public ShareScreen shareScreen;
 
-    [SerializeField] private GameObject gameOverText;
-    [SerializeField] private GameObject highScore;
-    [SerializeField] private GameObject leaderboardButton;
-    [SerializeField] private GameObject loadoutButton;
-    [SerializeField] private GameObject runAgainButton;
-    [SerializeField] private GameObject storeButton;
-    [SerializeField] private GameObject missionsButton;
+    [SerializeField] private GameObject gameOverObjects;
 
     private GameObject shareScreenImage;
 
@@ -58,13 +52,7 @@ public class GameOverState : AState
 
     public void PopulateShareScreen()
     {
-        gameOverText.SetActive(false);
-        highScore.SetActive(false);
-        leaderboardButton.SetActive(false);
-        loadoutButton.SetActive(false);
-        runAgainButton.SetActive(false);
-        storeButton.SetActive(false);
-        missionsButton.SetActive(false);
+        gameOverObjects.SetActive(false);
 
         shareScreen.gameObject.SetActive(true);
         shareScreen.characterName.text = trackManager.characterController.character.characterName;
@@ -95,13 +83,7 @@ public class GameOverState : AState
         shareScreenImage.SetActive(false);
         shareScreen.gameObject.SetActive(false);
 
-        gameOverText.SetActive(true);
-        highScore.SetActive(true);
-        leaderboardButton.SetActive(true);
-        loadoutButton.SetActive(true);
-        runAgainButton.SetActive(true);
-        storeButton.SetActive(true);
-        missionsButton.SetActive(true);
+        gameOverObjects.SetActive(true);
 
         miniLeaderboard.playerEntry.inputName.text = PlayerData.instance.previousName;
 
