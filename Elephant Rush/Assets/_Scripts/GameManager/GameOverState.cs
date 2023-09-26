@@ -65,6 +65,7 @@ public class GameOverState : AState
         shareScreenImage.transform.localPosition = new Vector3(0.0f, 0.0f, 13.66f);
 
         Character character = trackManager.characterController.character;
+        character.SwitchEyes();
         character.animator.SetTrigger("ShareScreen");
         character.gameObject.transform.SetParent(Camera.main.transform, false);
         character.gameObject.transform.localPosition = new Vector3(0.0f, -0.5f, 4.0f);

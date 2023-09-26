@@ -28,6 +28,9 @@ public class Character : MonoBehaviour
     private bool isMouseDown = false;
     private bool shouldRotate = false;
 
+    [SerializeField] private SkinnedMeshRenderer eyeMesh;
+    [SerializeField] private Material eyeMaterialSmiling;
+
     // Called by the game when an accessory changes, enable/disable the accessories children objects accordingly
     // a value of -1 as parameter disables all accessory.
     public void SetupAccesory(int accessory)
@@ -36,6 +39,11 @@ public class Character : MonoBehaviour
         {
             accessories[i].gameObject.SetActive(i == PlayerData.instance.usedAccessory);
         }
+    }
+
+    public void SwitchEyes()
+    {
+        eyeMesh.material = eyeMaterialSmiling;
     }
 
     public void ShouldRotate(bool value)
