@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using VoxelBusters.CoreLibrary;
 using VoxelBusters.EssentialKit;
-using UnityEngine.UI;
 using UnityEngine;
 
 public class SharingServices : MonoBehaviour
@@ -14,40 +11,20 @@ public class SharingServices : MonoBehaviour
     public void Share(int score)
     {
         gameScore = score;
-        text = "I just scored " + gameScore + " points in Indian Elephant Rush! Can you beat me? ";
+        text = "I just scored " + gameScore + " points in Haathi Daaud! Can you beat me? ";
         url = "https://play.google.com/store/apps/details?id=com.supercell.clashroyale";
 
-        ShareScreenshotWhatsApp();
+        ShareTextWithScreenshot();
     }
 
-    private void ShareScreenshotFacebook()
+    private void ShareTextWithScreenshot()
     {
-        SocialShareComposer composer = SocialShareComposer.CreateInstance(SocialShareComposerType.Facebook);
-        composer.AddScreenshot();
-        composer.SetCompletionCallback((result, error) => {
-            Debug.Log("Social Share Composer was closed. Result code: " + result.ResultCode);
+        ShareSheet shareSheet = ShareSheet.CreateInstance();
+        shareSheet.AddText(text + url);
+        shareSheet.AddScreenshot();
+        shareSheet.SetCompletionCallback((result, error) => {
+            Debug.Log("Share Sheet was closed. Result code: " + result.ResultCode);
         });
-        composer.Show();
-    }
-
-    private void ShareScreenshotTwitter()
-    {
-        SocialShareComposer composer = SocialShareComposer.CreateInstance(SocialShareComposerType.Twitter);
-        composer.AddScreenshot();
-        composer.SetCompletionCallback((result, error) => {
-            Debug.Log("Social Share Composer was closed. Result code: " + result.ResultCode);
-        });
-        composer.Show();
-    }
-
-    private void ShareScreenshotWhatsApp()
-    {
-        SocialShareComposer composer = SocialShareComposer.CreateInstance(SocialShareComposerType.WhatsApp);
-        composer.SetText(text + url);
-        composer.AddScreenshot();
-        composer.SetCompletionCallback((result, error) => {
-            Debug.Log("Social Share Composer was closed. Result code: " + result.ResultCode);
-        });
-        composer.Show();
+        shareSheet.Show();
     }
 }
