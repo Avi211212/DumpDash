@@ -23,6 +23,7 @@ public class GameOverState : AState
     public GameObject addButton;
 
     public ShareScreen shareScreen;
+    [SerializeField] private SharingServices sharingServices;
 
     [SerializeField] private Image gameOverImage;
     [SerializeField] private GameObject gameOverObjects;
@@ -76,13 +77,7 @@ public class GameOverState : AState
 
     public void Share()
     {
-        ScreenCapture.CaptureScreenshot("ShareScreen.png");
-
-        //string text = "I just scored " + trackManager.score + " points in Indian Elephant Rush! Can you beat me?";
-
-        //string url = "https://play.google.com/store/apps/details?id=com.unity3d.Elephantrun";
-
-        //new NativeShare().SetSubject("Budhia Run").SetText(text).SetUrl(url).Share();
+        sharingServices.Share(trackManager.score);
     }
 
     public void Return()
