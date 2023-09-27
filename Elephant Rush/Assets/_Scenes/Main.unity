@@ -4404,6 +4404,7 @@ GameObject:
   - component: {fileID: 455205752}
   - component: {fileID: 455205754}
   - component: {fileID: 455205753}
+  - component: {fileID: 455205755}
   m_Layer: 5
   m_Name: GameOver
   m_TagString: Untagged
@@ -4520,6 +4521,7 @@ MonoBehaviour:
   fullLeaderboard: {fileID: 1815696064}
   addButton: {fileID: 0}
   shareScreen: {fileID: 1938786622}
+  sharingServices: {fileID: 455205755}
   gameOverImage: {fileID: 455205753}
   gameOverObjects: {fileID: 1112174465}
 --- !u!114 &455205753
@@ -4560,6 +4562,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 455205747}
   m_CullTransparentMesh: 0
+--- !u!114 &455205755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455205747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 963f63889d6954649a6dd03e44c8a81c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &465382261
 GameObject:
   m_ObjectHideFlags: 0
