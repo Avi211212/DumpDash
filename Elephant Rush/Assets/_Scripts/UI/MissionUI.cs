@@ -5,6 +5,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class MissionUI : MonoBehaviour
 {
+    [SerializeField] private GameObject gameStateObject;
     public LoadoutState loadoutState;
 
     public RectTransform missionPlace;
@@ -32,7 +33,7 @@ public class MissionUI : MonoBehaviour
                 }
                 MissionEntry entry = (op.Result as GameObject).GetComponent<MissionEntry>();
                 entry.transform.SetParent(missionPlace, false);
-                entry.FillWithMission(PlayerData.instance.missions[i], this);
+                entry.FillWithMission(PlayerData.instance.missions[i], this, gameStateObject);
             }
             else
             {
