@@ -12,12 +12,12 @@ public class MissionEntry : MonoBehaviour
 	public Color notCompletedColor;
 	public Color completedColor;
 
-    public void FillWithMission(MissionBase m, MissionUI owner)
+    public void FillWithMission(MissionBase m, MissionUI owner, GameObject gameStateObject)
     {
         descText.text = m.GetMissionDesc();
         rewardText.text = m.reward.ToString();
 
-        if (m.isComplete)
+        if (m.isComplete && !gameStateObject.activeInHierarchy)
         {
             claimButton.gameObject.SetActive(true);
             progressText.gameObject.SetActive(false);
