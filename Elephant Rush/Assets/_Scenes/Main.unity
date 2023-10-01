@@ -4574,6 +4574,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 963f63889d6954649a6dd03e44c8a81c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shareButton: {fileID: 2067614275}
+  returnButton: {fileID: 526028732}
 --- !u!1 &465382261
 GameObject:
   m_ObjectHideFlags: 0
