@@ -23,14 +23,6 @@ public class SettingPopup : MonoBehaviour
     protected const string k_MusicVolumeFloatName = "MusicVolume";
     protected const string k_MasterSFXVolumeFloatName = "MasterSFXVolume";
 
-    private void Awake()
-    {
-        if (FB.IsInitialized)
-        {
-            FB.ActivateApp();
-        }
-    }
-
     public void Open()
     {
         loadoutState.character.ShouldRotate(false);
