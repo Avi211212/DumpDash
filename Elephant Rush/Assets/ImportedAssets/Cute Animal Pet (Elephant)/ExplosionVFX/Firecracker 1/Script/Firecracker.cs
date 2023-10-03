@@ -8,7 +8,7 @@ public class Firecracker : MonoBehaviour
 
     IEnumerator Start()
     {
-        yield return new WaitForSeconds(7);
+        yield return new WaitForSeconds(2);
         meshRenderer.SetActive(false);
     }
 }

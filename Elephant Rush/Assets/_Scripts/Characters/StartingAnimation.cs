@@ -21,7 +21,7 @@ public class StartingAnimation : MonoBehaviour
 
     IEnumerator Start()
     {
-        yield return new WaitForSeconds(7);
+        yield return new WaitForSeconds(2);
         startingAnimator.SetTrigger("PatakaPhoota");
         effSleep.SetActive(false);
         eyeMesh.material = eyeMaterialCrying;
@@ -31,7 +31,7 @@ public class StartingAnimation : MonoBehaviour
 
     IEnumerator TriggerElephant()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.4f);
         runningSpeed = 2.5f;
         StartCoroutine(StartGame());
     }
@@ -43,7 +43,7 @@ public class StartingAnimation : MonoBehaviour
 
     IEnumerator StartGame()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1.5f);
         if (PlayerData.instance.ftueLevel == 0)
         {
             PlayerData.instance.ftueLevel = 1;
