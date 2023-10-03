@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using Facebook.Unity;
 
 public class SettingPopup : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class SettingPopup : MonoBehaviour
     protected const string k_MasterVolumeFloatName = "MasterVolume";
     protected const string k_MusicVolumeFloatName = "MusicVolume";
     protected const string k_MasterSFXVolumeFloatName = "MasterSFXVolume";
-    
+
     public void Open()
     {
         loadoutState.character.ShouldRotate(false);
@@ -51,7 +52,6 @@ public class SettingPopup : MonoBehaviour
     {
         confirmationPopup.Open(loadoutState);
     }
-
 
     public void MasterVolumeChangeValue(float value)
     {
