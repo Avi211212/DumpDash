@@ -219,7 +219,7 @@ public class SlidingMission : MissionBase
 
     public override string GetMissionDesc()
     {
-        return "Attack " + ((int)max) + " Obstacles";
+        return "Attack " + ((int)max) + " Obstacles in a single run";
     }
 
     public override MissionType GetMissionType()
