@@ -9385,8 +9385,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.9204616e+31, y: 0.0000000028001284, z: 4.028617e-11,
-    w: 1.4549643e+22}
+  m_BoundingSphereOverride: {x: 7.09e-43, y: 1.8440119e+28, z: 1.6928744e+22, w: 1.7851134e+31}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -10309,7 +10308,7 @@ PrefabInstance:
         type: 3}
       propertyPath: stems.Array.data[0].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 1588137430bfbab4b9a00ba3b220b82b, type: 3}
+      objectReference: {fileID: 8300000, guid: 79615a253a27a471a9af4399016849c6, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc9855a6b2a67364ebc0db28e7bbc98b, type: 3}
 --- !u!4 &1472643707 stripped
@@ -11338,22 +11337,22 @@ PrefabInstance:
     - target: {fileID: 7724519323526490573, guid: 5d711523111ab7e4ca34a94ba2e4e40d,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 1e-45
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: 7724519323526490573, guid: 5d711523111ab7e4ca34a94ba2e4e40d,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: NaN
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7724519323526490573, guid: 5d711523111ab7e4ca34a94ba2e4e40d,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 8.4e-44
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7724519323526490573, guid: 5d711523111ab7e4ca34a94ba2e4e40d,
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 0
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d711523111ab7e4ca34a94ba2e4e40d, type: 3}
