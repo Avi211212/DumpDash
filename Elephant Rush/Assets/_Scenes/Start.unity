@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44680393, g: 0.49317342, b: 0.55656546, a: 1}
+  m_IndirectSpecularColor: {r: 0.43424192, g: 0.4811309, b: 0.56203675, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9385,7 +9385,8 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.02e-43, y: 0, z: 0, w: 3.2021574e-27}
+  m_BoundingSphereOverride: {x: 1.9204616e+31, y: 0.0000000028001284, z: 4.028617e-11,
+    w: 1.4549643e+22}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -9397,14 +9398,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 874553850}
-  m_LocalRotation: {x: 0.044943456, y: -0.95125127, z: 0.16773124, w: 0.25488707}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -1.59, y: 3.3, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 20, y: -150, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &887666866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10734,7 +10735,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 224.99998}
+  m_AnchoredPosition: {x: 0, y: 225}
   m_SizeDelta: {x: -240, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1886764181
@@ -11114,7 +11115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 5.8}
+  m_AnchoredPosition: {x: 0, y: 5.799999}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1984010376
@@ -11333,6 +11334,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PlayOnAwake
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7724519323526490573, guid: 5d711523111ab7e4ca34a94ba2e4e40d,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 1e-45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7724519323526490573, guid: 5d711523111ab7e4ca34a94ba2e4e40d,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: NaN
+      objectReference: {fileID: 0}
+    - target: {fileID: 7724519323526490573, guid: 5d711523111ab7e4ca34a94ba2e4e40d,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 8.4e-44
+      objectReference: {fileID: 0}
+    - target: {fileID: 7724519323526490573, guid: 5d711523111ab7e4ca34a94ba2e4e40d,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d711523111ab7e4ca34a94ba2e4e40d, type: 3}
