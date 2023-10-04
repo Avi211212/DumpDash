@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4000010868486168}
-  - component: {fileID: 65000011981347708}
   - component: {fileID: 114000011473360826}
   - component: {fileID: 82000013720572244}
   - component: {fileID: 114794807078013070}
+  - component: {fileID: 6124820003269874696}
   m_Layer: 9
   m_Name: ObstacleRickshaw
   m_TagString: Untagged
@@ -36,19 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &65000011981347708
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000011769374998}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.205158, y: 3.2745347, z: 5.8248725}
-  m_Center: {x: 0.056557298, y: 1.9381855, z: 0.4765489}
 --- !u!114 &114000011473360826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,6 +158,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixerGroup: SFX
+--- !u!136 &6124820003269874696
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000011769374998}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.72
+  m_Height: 6.53
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.79, z: 0.75}
 --- !u!1001 &1447893369371741516
 PrefabInstance:
   m_ObjectHideFlags: 0
