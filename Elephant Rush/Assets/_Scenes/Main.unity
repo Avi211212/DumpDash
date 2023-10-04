@@ -1276,6 +1276,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MissionPopup
       objectReference: {fileID: 0}
+    - target: {fileID: 1000012895414238, guid: a53fe2875371488408daf0df7d69a981, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114000011972273750, guid: a53fe2875371488408daf0df7d69a981,
         type: 3}
       propertyPath: loadoutState
@@ -4369,7 +4373,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   trackManager: {fileID: 1958487560}
   canvas: {fileID: 455205751}
-  missionPopup: {fileID: 80306028}
+  missionPopup: {fileID: 137514649}
   gameOverTheme: {fileID: 8300000, guid: 15e26518785848f4caf8ba236b4d0690, type: 3}
   miniLeaderboard: {fileID: 859562874}
   fullLeaderboard: {fileID: 1815696064}
@@ -6665,6 +6669,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 590897648}
+  - component: {fileID: 590897649}
   m_Layer: 0
   m_Name: UICamera
   m_TagString: Untagged
@@ -6695,6 +6700,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &590897649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590897646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc39da9d0336344999a985ddc08b8e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missionUI: {fileID: 0}
+  refreshTime: {fileID: 1822972502}
 --- !u!1 &590977523
 GameObject:
   m_ObjectHideFlags: 0
@@ -10464,7 +10483,6 @@ GameObject:
   - component: {fileID: 869760745}
   - component: {fileID: 869760749}
   - component: {fileID: 869760750}
-  - component: {fileID: 869760751}
   m_Layer: 5
   m_Name: Loadout
   m_TagString: Untagged
@@ -10620,18 +10638,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   facebookText: {fileID: 18985293}
---- !u!114 &869760751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 869760744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc39da9d0336344999a985ddc08b8e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &878427076
 GameObject:
   m_ObjectHideFlags: 0
@@ -24682,14 +24688,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 531176286}
     m_Modifications:
     - target: {fileID: 1000012895414238, guid: a53fe2875371488408daf0df7d69a981, type: 3}
+      propertyPath: m_Name
+      value: MissionPopup
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000012895414238, guid: a53fe2875371488408daf0df7d69a981, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114000011972273750, guid: a53fe2875371488408daf0df7d69a981,
-        type: 3}
-      propertyPath: gameState
-      value: 
-      objectReference: {fileID: 1245236420}
     - target: {fileID: 114000011972273750, guid: a53fe2875371488408daf0df7d69a981,
         type: 3}
       propertyPath: loadoutState
@@ -24700,34 +24705,6 @@ PrefabInstance:
       propertyPath: gameStateObject
       value: 
       objectReference: {fileID: 1245236420}
-    - target: {fileID: 114000011972273750, guid: a53fe2875371488408daf0df7d69a981,
-        type: 3}
-      propertyPath: missionEntryPrefab.m_AssetGUID
-      value: 71514012df4dcd146957cb145cec8287
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000011972273750, guid: a53fe2875371488408daf0df7d69a981,
-        type: 3}
-      propertyPath: missionEntryPrefab.m_CachedAsset
-      value: 
-      objectReference: {fileID: 1000011950310036, guid: 71514012df4dcd146957cb145cec8287,
-        type: 3}
-    - target: {fileID: 114000011972273750, guid: a53fe2875371488408daf0df7d69a981,
-        type: 3}
-      propertyPath: addMissionButtonPrefab.m_AssetGUID
-      value: 1c8b4e674120cad47a3fc249308e5af3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000011972273750, guid: a53fe2875371488408daf0df7d69a981,
-        type: 3}
-      propertyPath: addMissionButtonPrefab.m_CachedAsset
-      value: 
-      objectReference: {fileID: 1000012580447506, guid: 1c8b4e674120cad47a3fc249308e5af3,
-        type: 3}
-    - target: {fileID: 114000013804486614, guid: a53fe2875371488408daf0df7d69a981,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 19a991bbda38944fe9e46b17c9c7ce70,
-        type: 3}
     - target: {fileID: 224000010498272028, guid: a53fe2875371488408daf0df7d69a981,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -24743,16 +24720,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: -18
       objectReference: {fileID: 0}
-    - target: {fileID: 224000012287174538, guid: a53fe2875371488408daf0df7d69a981,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000012287174538, guid: a53fe2875371488408daf0df7d69a981,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 224000013440066280, guid: a53fe2875371488408daf0df7d69a981,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -24762,11 +24729,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000013928350836, guid: a53fe2875371488408daf0df7d69a981,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.01171875
       objectReference: {fileID: 0}
     - target: {fileID: 224000013969192492, guid: a53fe2875371488408daf0df7d69a981,
         type: 3}
@@ -24858,33 +24820,35 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224000014071012506, guid: a53fe2875371488408daf0df7d69a981,
+    - target: {fileID: 224000013969192492, guid: a53fe2875371488408daf0df7d69a981,
         type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 80
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224000014071012506, guid: a53fe2875371488408daf0df7d69a981,
+    - target: {fileID: 224000013969192492, guid: a53fe2875371488408daf0df7d69a981,
         type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 80
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224000014071012506, guid: a53fe2875371488408daf0df7d69a981,
+    - target: {fileID: 224000013969192492, guid: a53fe2875371488408daf0df7d69a981,
         type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000014071012506, guid: a53fe2875371488408daf0df7d69a981,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -21.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224505876422526116, guid: a53fe2875371488408daf0df7d69a981,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -1
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a53fe2875371488408daf0df7d69a981, type: 3}
+--- !u!114 &1822972502 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7664372814661946218, guid: a53fe2875371488408daf0df7d69a981,
+    type: 3}
+  m_PrefabInstance: {fileID: 1822972501}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1824968643
 GameObject:
   m_ObjectHideFlags: 0
