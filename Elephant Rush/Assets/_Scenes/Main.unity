@@ -1403,18 +1403,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 80306026}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &80306028 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114000011972273750, guid: a53fe2875371488408daf0df7d69a981,
-    type: 3}
-  m_PrefabInstance: {fileID: 80306026}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fff2f071f7335eb43a712a702b990041, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &82288055
 GameObject:
   m_ObjectHideFlags: 0
@@ -21681,8 +21669,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 80306028}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 137514649}
+        m_TargetAssemblyTypeName: MissionUI, Assembly-CSharp
         m_MethodName: CallOpen
         m_Mode: 1
         m_Arguments:
