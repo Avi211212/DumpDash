@@ -148,7 +148,15 @@ public class CharacterCollider : MonoBehaviour
 
             if (TrackManager.instance.isTutorial)
             {
-                m_TutorialHitObstacle = true;
+                if (c.gameObject.CompareTag("Attackable") && controller.isSliding)
+                {
+                    m_TutorialHitObstacle = false;
+                    hasAttacked = true;
+                }
+                else
+                {
+                    m_TutorialHitObstacle = true;
+                }
             }
             else
             {
