@@ -6712,7 +6712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc39da9d0336344999a985ddc08b8e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missionUI: {fileID: 0}
+  missionUI: {fileID: 137514649}
   refreshTime: {fileID: 1822972502}
 --- !u!1 &590977523
 GameObject:
