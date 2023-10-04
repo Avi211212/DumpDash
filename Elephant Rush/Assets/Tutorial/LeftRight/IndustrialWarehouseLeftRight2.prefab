@@ -103,12 +103,16 @@ MonoBehaviour:
   objectRoot: {fileID: 0}
   collectibleTransform: {fileID: 0}
   possibleObstacles:
-  - m_AssetGUID: 22facfbe232a90b45b681c638f2e490d
+  - m_AssetGUID: 7a05c29495c51dc419d92354c8a728aa
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: b19a0bd8ede69fe4683dff84150a047b
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   obstaclePositions:
-  - 0.5
+  - 0.9
 --- !u!1 &1000010319726848
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +168,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000010485941956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.01, z: -4.49}
+  m_LocalPosition: {x: 0, y: 0.01, z: -9.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
