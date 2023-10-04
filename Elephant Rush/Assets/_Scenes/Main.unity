@@ -1276,6 +1276,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MissionPopup
       objectReference: {fileID: 0}
+    - target: {fileID: 1000012895414238, guid: a53fe2875371488408daf0df7d69a981, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114000011972273750, guid: a53fe2875371488408daf0df7d69a981,
         type: 3}
       propertyPath: loadoutState
@@ -4369,7 +4373,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   trackManager: {fileID: 1958487560}
   canvas: {fileID: 455205751}
-  missionPopup: {fileID: 80306028}
+  missionPopup: {fileID: 137514649}
   gameOverTheme: {fileID: 8300000, guid: 15e26518785848f4caf8ba236b4d0690, type: 3}
   miniLeaderboard: {fileID: 859562874}
   fullLeaderboard: {fileID: 1815696064}
@@ -6708,6 +6712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc39da9d0336344999a985ddc08b8e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  missionUI: {fileID: 0}
   refreshTime: {fileID: 1822972502}
 --- !u!1 &590977523
 GameObject:
