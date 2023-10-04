@@ -18,7 +18,6 @@ public class TrackSegment : MonoBehaviour
 
     public AssetReference[] possibleObstacles; 
 
-    [HideInInspector]
     public float[] obstaclePositions;
 
     public float worldLength { get { return m_WorldLength; } }

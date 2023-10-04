@@ -558,7 +558,7 @@ public class GameState : AState
                 }
             }
         }
-        else if (m_DisplayTutorial && ratio > nextObstaclePosition - 0.1f)
+        else if (m_DisplayTutorial && ratio > nextObstaclePosition - 0.2f)
             DisplayTutorial(true);
     }
 
