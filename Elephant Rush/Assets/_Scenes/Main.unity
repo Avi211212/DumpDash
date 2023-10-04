@@ -5708,7 +5708,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Slide down \nto slide"
+  m_Text: "Swipe down \nto Attack"
 --- !u!222 &532293854
 CanvasRenderer:
   m_ObjectHideFlags: 0
