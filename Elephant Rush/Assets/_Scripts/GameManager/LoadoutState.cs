@@ -43,6 +43,8 @@ public class LoadoutState : AState
 	public Leaderboard leaderboard;
     public MissionUI missionPopup;
 	public Button runButton;
+    [SerializeField] private GameObject quitPopup;
+    [SerializeField] private Animator quitPopupAnimator;
 
     public GameObject tutorialBlocker;
     public GameObject tutorialPrompt;
@@ -181,7 +183,7 @@ public class LoadoutState : AState
         if (!runButton.interactable)
         {
             bool interactable = ThemeDatabase.loaded && CharacterDatabase.loaded;
-            if(interactable)
+            if (interactable)
             {
                 runButton.interactable = true;
                 runButton.GetComponentInChildren<Text>().text = "Run!";
@@ -191,11 +193,26 @@ public class LoadoutState : AState
             }
         }
 
-		charSelect.gameObject.SetActive(PlayerData.instance.characters.Count > 1);
-		themeSelect.gameObject.SetActive(PlayerData.instance.themes.Count > 1);
+        charSelect.gameObject.SetActive(PlayerData.instance.characters.Count > 1);
+        themeSelect.gameObject.SetActive(PlayerData.instance.themes.Count > 1);
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            quitPopup.SetActive(true);
+        }
     }
 
-	public void GoToStore()
+    public void CancelQuit()
+    {
+        quitPopupAnimator.SetTrigger("Cancel");
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    public void GoToStore()
 	{
         UnityEngine.SceneManagement.SceneManager.LoadScene(k_ShopSceneName, UnityEngine.SceneManagement.LoadSceneMode.Additive);
 	}
@@ -381,7 +398,7 @@ public class LoadoutState : AState
         }
 	}
 
-	public void ChangeConsumable(int dir)
+    public void ChangeConsumable(int dir)
 	{
 		bool found = false;
 		do
