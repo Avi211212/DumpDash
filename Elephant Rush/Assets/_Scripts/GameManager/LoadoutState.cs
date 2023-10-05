@@ -57,6 +57,7 @@ public class LoadoutState : AState
     Consumable.ConsumableType m_PowerupToUse = Consumable.ConsumableType.NONE;
 
     public Character character;
+    [SerializeField] private InputField nameInputField;
 
     protected GameObject m_Character;
     protected List<int> m_OwnedAccesories = new List<int>();
@@ -155,6 +156,13 @@ public class LoadoutState : AState
     public override string GetName()
     {
         return "Loadout";
+    }
+
+    public void SetName(string name)
+    {
+        PlayerData.instance.previousName = name;
+        character.editableName = name;
+        PlayerData.instance.Save();
     }
 
     public override void Tick()
@@ -295,7 +303,21 @@ public class LoadoutState : AState
                     character = newChar.GetComponent<Character>();
                     character.ShouldRotate(true);
                     charNameDisplay.text = c.characterName;
+
                     m_Character.transform.localPosition = Vector3.zero;
+
+                    if (charNameDisplay.text == "Chota Hathi")
+                    {
+                        nameInputField.gameObject.SetActive(false);
+                    }
+                    else
+                    {
+                        if(c.editableName != "")
+                        {
+                            charNameDisplay.text = character.editableName;
+                        }
+                        nameInputField.gameObject.SetActive(true);
+                    }
 
                     SetupAccessory();
                 }
