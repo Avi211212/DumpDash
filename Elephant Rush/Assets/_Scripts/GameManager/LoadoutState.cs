@@ -19,6 +19,7 @@ public class LoadoutState : AState
 
     [Header("Char UI")]
     public Text charNameDisplay;
+    public Text charEditedText;
 	public RectTransform charSelect;
 	public Transform charPosition;
 
@@ -42,6 +43,8 @@ public class LoadoutState : AState
 	public Leaderboard leaderboard;
     public MissionUI missionPopup;
 	public Button runButton;
+    [SerializeField] private GameObject quitPopup;
+    [SerializeField] private Animator quitPopupAnimator;
 
     public GameObject tutorialBlocker;
     public GameObject tutorialPrompt;
@@ -57,6 +60,7 @@ public class LoadoutState : AState
     Consumable.ConsumableType m_PowerupToUse = Consumable.ConsumableType.NONE;
 
     public Character character;
+    [SerializeField] private InputField nameInputField;
 
     protected GameObject m_Character;
     protected List<int> m_OwnedAccesories = new List<int>();
@@ -157,12 +161,29 @@ public class LoadoutState : AState
         return "Loadout";
     }
 
+    public void SetName(string editableName)
+    {
+        if(editableName != "")
+        {
+            string actualName = character.characterName;
+            if (PlayerData.instance.charactersName.ContainsKey(actualName))
+            {
+                PlayerData.instance.charactersName[actualName] = editableName;
+            }
+            else
+            {
+                PlayerData.instance.charactersName.Add(actualName, editableName);
+            }
+            PlayerData.instance.Save();
+        }
+    }
+
     public override void Tick()
     {
         if (!runButton.interactable)
         {
             bool interactable = ThemeDatabase.loaded && CharacterDatabase.loaded;
-            if(interactable)
+            if (interactable)
             {
                 runButton.interactable = true;
                 runButton.GetComponentInChildren<Text>().text = "Run!";
@@ -172,11 +193,26 @@ public class LoadoutState : AState
             }
         }
 
-		charSelect.gameObject.SetActive(PlayerData.instance.characters.Count > 1);
-		themeSelect.gameObject.SetActive(PlayerData.instance.themes.Count > 1);
+        charSelect.gameObject.SetActive(PlayerData.instance.characters.Count > 1);
+        themeSelect.gameObject.SetActive(PlayerData.instance.themes.Count > 1);
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            quitPopup.SetActive(true);
+        }
     }
 
-	public void GoToStore()
+    public void CancelQuit()
+    {
+        quitPopupAnimator.SetTrigger("Cancel");
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    public void GoToStore()
 	{
         UnityEngine.SceneManagement.SceneManager.LoadScene(k_ShopSceneName, UnityEngine.SceneManagement.LoadSceneMode.Additive);
 	}
@@ -295,7 +331,17 @@ public class LoadoutState : AState
                     character = newChar.GetComponent<Character>();
                     character.ShouldRotate(true);
                     charNameDisplay.text = c.characterName;
+                    charEditedText.text = character.characterName;
+
                     m_Character.transform.localPosition = Vector3.zero;
+
+                    if (PlayerData.instance.charactersName.ContainsKey(c.characterName))
+                    {
+                        string editableName = PlayerData.instance.charactersName[c.characterName];
+                        nameInputField.text = editableName;
+                        charNameDisplay.text = editableName;
+                        charEditedText.text = editableName;
+                    }
 
                     SetupAccessory();
                 }
@@ -352,7 +398,7 @@ public class LoadoutState : AState
         }
 	}
 
-	public void ChangeConsumable(int dir)
+    public void ChangeConsumable(int dir)
 	{
 		bool found = false;
 		do

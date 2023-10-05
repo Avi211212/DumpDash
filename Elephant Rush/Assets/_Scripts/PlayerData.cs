@@ -31,11 +31,11 @@ public class PlayerData
 
     protected string saveFile = "";
 
-
     public int coins;
     public int premium;
     public Dictionary<Consumable.ConsumableType, int> consumables = new Dictionary<Consumable.ConsumableType, int>();   // Inventory of owned consumables and quantity.
 
+    public Dictionary<string, string> charactersName = new Dictionary<string, string>(); // Dictionary of character name and their editable name.
     public List<string> characters = new List<string>();    // Inventory of characters owned.
     public int usedCharacter;                               // Currently equipped character.
     public int usedAccessory = -1;
@@ -91,6 +91,7 @@ public class PlayerData
 
     public void AddCharacter(string name)
     {
+        charactersName.Add(name, name); 
         characters.Add(name);
     }
 
@@ -231,6 +232,7 @@ public class PlayerData
 
 	static public void NewSave()
 	{
+        m_Instance.charactersName.Clear();
 		m_Instance.characters.Clear();
 		m_Instance.themes.Clear();
 		m_Instance.missions.Clear();
@@ -245,6 +247,7 @@ public class PlayerData
         m_Instance.premium = 0;
 
 		m_Instance.characters.Add("Chota Hathi");
+        m_Instance.charactersName.Add("Chota Hathi", "Chota Hathi");
 		m_Instance.themes.Add("Day");
 
         m_Instance.ftueLevel = 0;
@@ -292,6 +295,13 @@ public class PlayerData
             }
 
             characters.Add(charName);
+        }
+
+        charactersName.Clear();
+        int charNameCount = r.ReadInt32();
+        for (int i = 0; i < charNameCount; ++i)
+        {
+            charactersName.Add(r.ReadString(), r.ReadString());
         }
 
         usedCharacter = r.ReadInt32();
@@ -406,6 +416,13 @@ public class PlayerData
         foreach (string c in characters)
         {
             w.Write(c);
+        }
+
+        w.Write(charactersName.Count);
+        foreach (KeyValuePair<string, string> p in charactersName)
+        {
+            w.Write(p.Key);
+            w.Write(p.Value);
         }
 
         w.Write(usedCharacter);

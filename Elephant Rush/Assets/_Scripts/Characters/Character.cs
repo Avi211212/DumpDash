@@ -8,6 +8,7 @@ using System.Diagnostics;
 /// </summary>
 public class Character : MonoBehaviour
 {
+    public string editableName = "";
     public string characterName;
     public int cost;
 	public int premiumCost;
