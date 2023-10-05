@@ -19,6 +19,7 @@ public class LoadoutState : AState
 
     [Header("Char UI")]
     public Text charNameDisplay;
+    public Text charEditedText;
 	public RectTransform charSelect;
 	public Transform charPosition;
 
@@ -158,11 +159,21 @@ public class LoadoutState : AState
         return "Loadout";
     }
 
-    public void SetName(string name)
+    public void SetName(string editableName)
     {
-        PlayerData.instance.previousName = name;
-        character.editableName = name;
-        PlayerData.instance.Save();
+        if(editableName != "")
+        {
+            string actualName = character.characterName;
+            if (PlayerData.instance.charactersName.ContainsKey(actualName))
+            {
+                PlayerData.instance.charactersName[actualName] = editableName;
+            }
+            else
+            {
+                PlayerData.instance.charactersName.Add(actualName, editableName);
+            }
+            PlayerData.instance.Save();
+        }
     }
 
     public override void Tick()
@@ -303,20 +314,16 @@ public class LoadoutState : AState
                     character = newChar.GetComponent<Character>();
                     character.ShouldRotate(true);
                     charNameDisplay.text = c.characterName;
+                    charEditedText.text = character.characterName;
 
                     m_Character.transform.localPosition = Vector3.zero;
 
-                    if (charNameDisplay.text == "Chota Hathi")
+                    if (PlayerData.instance.charactersName.ContainsKey(c.characterName))
                     {
-                        nameInputField.gameObject.SetActive(false);
-                    }
-                    else
-                    {
-                        if(c.editableName != "")
-                        {
-                            charNameDisplay.text = character.editableName;
-                        }
-                        nameInputField.gameObject.SetActive(true);
+                        string editableName = PlayerData.instance.charactersName[c.characterName];
+                        nameInputField.text = editableName;
+                        charNameDisplay.text = editableName;
+                        charEditedText.text = editableName;
                     }
 
                     SetupAccessory();
