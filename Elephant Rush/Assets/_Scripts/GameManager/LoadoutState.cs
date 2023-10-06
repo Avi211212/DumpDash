@@ -299,17 +299,6 @@ public class LoadoutState : AState
                         }
                     }
 
-                    Vector3 pos = charPosition.transform.position;
-                    if (m_OwnedAccesories.Count > 0)
-                    {
-                        pos.x = k_OwnedAccessoriesCharacterOffset;
-                    }
-                    else
-                    {
-                        pos.x = 0.0f;
-                    }
-                    charPosition.transform.position = pos;
-
                     accessoriesSelector.gameObject.SetActive(m_OwnedAccesories.Count > 0);
 
                     AsyncOperationHandle op = Addressables.InstantiateAsync(c.characterName);
