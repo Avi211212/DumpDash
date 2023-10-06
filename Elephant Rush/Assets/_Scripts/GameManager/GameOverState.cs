@@ -59,9 +59,18 @@ public class GameOverState : AState
 
         Camera.main.transform.position = new Vector3(0.0f, 13.0f, -20.0f);
         shareScreen.gameObject.SetActive(true);
-        shareScreen.characterName.text = trackManager.characterController.character.characterName;
+        string characterName = trackManager.characterController.character.characterName;
+        shareScreen.characterName.text = characterName;
         shareScreen.score.text = "Score : " + trackManager.score.ToString();
-        shareScreen.playerName.text = PlayerData.instance.previousName;
+        if(PlayerData.instance.charactersName.ContainsKey(characterName))
+        {
+            shareScreen.playerName.text = PlayerData.instance.charactersName[characterName];
+        }
+        else
+        {
+            shareScreen.playerName.text = characterName;
+        }
+        PlayerData.instance.previousName = PlayerData.instance.charactersName[characterName];
         shareScreenImage = Instantiate(shareScreen.shareScreenImage, Camera.main.transform, false);
         shareScreenImage.transform.localPosition = new Vector3(0.0f, 0.0f, 13.66f);
 
