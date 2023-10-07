@@ -60,7 +60,7 @@ public class GameState : AState
 
     public string adsPlacementId = "rewardedVideo";
 #if UNITY_ANALYTICS
-    public AdvertisingNetwork adsNetwork = AdvertisingNetwork.UnityAds;
+    //public AdvertisingNetwork adsNetwork = AdvertisingNetwork.UnityAds;
 #endif
     public bool adsRewarded = true;
 
