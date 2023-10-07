@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accessoryName: Shower Cap
   cost: 5000
-  premiumCost: 0
+  premiumCost: 50
   accessoryIcon: {fileID: 21300000, guid: 48aff5f9e882a40088eb74840f8de676, type: 3}
 --- !u!1001 &9126122113747606005
 PrefabInstance:
