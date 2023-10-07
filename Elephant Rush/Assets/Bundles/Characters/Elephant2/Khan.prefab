@@ -1821,8 +1821,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   editableName: 
   characterName: Khan
-  cost: 100
-  premiumCost: 100
+  cost: 40000
+  premiumCost: 400
   accessories:
   - {fileID: 3798574005569942795}
   - {fileID: 8096740775978905787}

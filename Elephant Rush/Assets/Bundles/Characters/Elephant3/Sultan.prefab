@@ -47,9 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 397d959cc2da2684c8109d35be73c4a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  editableName: 
   characterName: Sultan
-  cost: 100
-  premiumCost: 100
+  cost: 50000
+  premiumCost: 500
   accessories:
   - {fileID: 7862837545443872730}
   - {fileID: 1347745566217205366}

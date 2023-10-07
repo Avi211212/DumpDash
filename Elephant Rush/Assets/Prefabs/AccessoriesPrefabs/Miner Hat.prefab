@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   accessoryName: Miner Hat
-  cost: 0
-  premiumCost: 0
+  cost: 5000
+  premiumCost: 50
   accessoryIcon: {fileID: 21300000, guid: 0b1d3779d3785464ca6ffae95b172526, type: 3}
 --- !u!1001 &6923925702304396717
 PrefabInstance:

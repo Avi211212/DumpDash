@@ -1821,8 +1821,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   editableName: 
   characterName: Zara
-  cost: 100
-  premiumCost: 100
+  cost: 45000
+  premiumCost: 450
   accessories:
   - {fileID: 4742564419831929420}
   - {fileID: 3844043194315171672}

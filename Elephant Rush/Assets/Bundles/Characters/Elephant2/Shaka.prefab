@@ -1821,8 +1821,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   editableName: 
   characterName: Shaka
-  cost: 100
-  premiumCost: 100
+  cost: 42000
+  premiumCost: 420
   accessories:
   - {fileID: 7515783459092456547}
   - {fileID: 3904992353651508884}

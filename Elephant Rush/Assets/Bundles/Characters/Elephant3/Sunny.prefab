@@ -1819,9 +1819,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 397d959cc2da2684c8109d35be73c4a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  editableName: 
   characterName: Sunny
-  cost: 100
-  premiumCost: 100
+  cost: 52000
+  premiumCost: 520
   accessories:
   - {fileID: 1858925328159217281}
   - {fileID: 3126485788766862673}
