@@ -138,6 +138,10 @@ public class GameState : AState
 
         currentModifier.OnRunStart(this);
 
+#if UNITY_EDITOR
+        PlayerData.instance.tutorialDone = true;
+#endif
+
         m_IsTutorial = !PlayerData.instance.tutorialDone;
         trackManager.isTutorial = m_IsTutorial;
 
