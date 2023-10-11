@@ -15,7 +15,7 @@ public class AdsForMission : MonoBehaviour
     public Text newMissionText;
     public Button adsButton;
 #if UNITY_ANALYTICS
-    public AdvertisingNetwork adsNetwork = AdvertisingNetwork.UnityAds;
+    //public AdvertisingNetwork adsNetwork = AdvertisingNetwork.UnityAds;
 #endif
     public string adsPlacementId = "rewardedVideo";
     public bool adsRewarded = true; 

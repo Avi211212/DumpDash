@@ -6918,6 +6918,7 @@ GameObject:
   m_Component:
   - component: {fileID: 590897648}
   - component: {fileID: 590897649}
+  - component: {fileID: 590897650}
   m_Layer: 0
   m_Name: UICamera
   m_TagString: Untagged
@@ -6962,6 +6963,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missionUI: {fileID: 137514649}
   refreshTime: {fileID: 1822972502}
+--- !u!114 &590897650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590897646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 567db3ce6c67c384fb9956ba7f774c66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &590977523
 GameObject:
   m_ObjectHideFlags: 0
