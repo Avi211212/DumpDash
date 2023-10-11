@@ -1819,9 +1819,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 397d959cc2da2684c8109d35be73c4a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  editableName: 
   characterName: Rose
-  cost: 100
-  premiumCost: 100
+  cost: 55000
+  premiumCost: 550
   accessories:
   - {fileID: 7375660996011922113}
   - {fileID: 6371130988814463630}

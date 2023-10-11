@@ -1819,9 +1819,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 397d959cc2da2684c8109d35be73c4a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  editableName: 
   characterName: Pogo
-  cost: 0
-  premiumCost: 0
+  cost: 32000
+  premiumCost: 320
   accessories:
   - {fileID: 3892765672588582847}
   - {fileID: 471677268391434843}
