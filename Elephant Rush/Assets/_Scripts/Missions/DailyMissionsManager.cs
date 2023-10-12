@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using Unity.Notifications.Android;
 
-
 public class DailyMissionsManager : MonoBehaviour
 {
     [SerializeField] private MissionUI missionUI;

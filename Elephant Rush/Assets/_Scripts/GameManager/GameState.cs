@@ -84,6 +84,7 @@ public class GameState : AState
     protected int m_CurrentSegmentObstacleIndex = 0;
     protected TrackSegment m_NextValidSegment = null;
     protected int k_ObstacleToClear = 3;
+    protected bool IsPaused { get { return pauseMenu.gameObject.activeSelf; } }
 
     public override void Enter(AState from)
     {
@@ -96,7 +97,6 @@ public class GameState : AState
         }
 
         int randomMusicIndex = Random.Range(0, 5);
-
         if (MusicPlayer.instance.GetStem(0) != gameTheme[randomMusicIndex])
         {
             MusicPlayer.instance.SetStem(0, gameTheme[randomMusicIndex]);
@@ -218,6 +218,16 @@ public class GameState : AState
             CharacterInputController chrCtrl = trackManager.characterController;
 
             m_TimeSinceStart += Time.deltaTime;
+
+            if(!MusicPlayer.instance.audioSource.isPlaying && !IsPaused)
+            {
+                int randomMusicIndex = Random.Range(0, 5);
+                if (MusicPlayer.instance.GetStem(0) != gameTheme[randomMusicIndex])
+                {
+                    MusicPlayer.instance.SetStem(0, gameTheme[randomMusicIndex]);
+                    CoroutineHandler.StartStaticCoroutine(MusicPlayer.instance.RestartAllStems());
+                }
+            }
 
             if (chrCtrl.currentLife <= 0)
             {
