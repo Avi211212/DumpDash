@@ -17,6 +17,7 @@ public class MusicPlayer : MonoBehaviour
 	public UnityEngine.Audio.AudioMixer mixer;
     public Stem[] stems;
     public float maxVolume = 0.1f;
+    public AudioSource audioSource;
 
     void Awake()
     {

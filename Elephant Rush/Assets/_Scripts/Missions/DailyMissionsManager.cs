@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using Unity.Notifications.Android;
 
 public class DailyMissionsManager : MonoBehaviour
 {
@@ -12,6 +13,15 @@ public class DailyMissionsManager : MonoBehaviour
     void Start()
     {
         LoadLastRefreshDate();
+
+        var channel = new AndroidNotificationChannel()
+        {
+            Id = "channel_id",
+            Name = "Default Channel",
+            Importance = Importance.Default,
+            Description = "Generic notifications",
+        };
+        AndroidNotificationCenter.RegisterNotificationChannel(channel);
     }
 
     void Update()
@@ -55,6 +65,17 @@ public class DailyMissionsManager : MonoBehaviour
 
     private void RefreshMission()
     {
+        var notification = new AndroidNotification()
+        {
+            Title = "Your Daily Missions have been Refreshed",
+            Text = "Play Game to Complete Missions",
+            SmallIcon = "icon",
+            LargeIcon = "logo",
+            FireTime = System.DateTime.Now.AddSeconds(5),
+        };
+
+        AndroidNotificationCenter.SendNotification(notification, "channel_id");
+
         PlayerData.instance.missions.Clear();
         PlayerData.instance.CheckMissionsCount();
         missionUI.StartCoroutine(missionUI.Open());
