@@ -40,7 +40,12 @@ public class MusicPlayer : MonoBehaviour
 	{
 		PlayerData.Create ();
 
-		if (PlayerData.instance.masterVolume > float.MinValue) 
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+
+        if (PlayerData.instance.masterVolume > float.MinValue) 
 		{
 			mixer.SetFloat ("MasterVolume", PlayerData.instance.masterVolume);
 			mixer.SetFloat ("MusicVolume", PlayerData.instance.musicVolume);
