@@ -411,7 +411,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: e8bbf89da3e4a4494809114d30b94c3a, type: 3}
     startingSpeedRatio: -0.1
   maxVolume: 1
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 82094754644436538}
 --- !u!1 &1473493653886274
 GameObject:
   m_ObjectHideFlags: 0
