@@ -1,32 +1,14 @@
 fileFormatVersion: 2
-guid: 28288b28edded764b843730ced06fb8c
+guid: 4e7aff0995bc1d643ba2a14a80e9b366
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable:
-  - first:
-      1: 100000
-    second: //RootNode
-  - first:
-      4: 400000
-    second: //RootNode
-  - first:
-      23: 2300000
-    second: //RootNode
-  - first:
-      33: 3300000
-    second: //RootNode
-  - first:
-      43: 4300000
-    second: BackgroundCircle
-  - first:
-      95: 9500000
-    second: //RootNode
+  internalIDToNameTable: []
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: BackgroundCircle
-    second: {fileID: 2100000, guid: 48baa53fd2ee27b449bec645c5f8e4eb, type: 2}
+    second: {fileID: 2100000, guid: 068221f02cfd89243a19fe0312b0a6f6, type: 2}
   materials:
     materialImportMode: 1
     materialName: 1
@@ -37,7 +19,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    removeConstantScaleCurves: 0
+    removeConstantScaleCurves: 1
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -67,8 +49,8 @@ ModelImporter:
     importBlendShapes: 0
     importCameras: 0
     importLights: 0
-    nodeNameCollisionStrategy: 0
-    fileIdsGeneration: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -85,7 +67,7 @@ ModelImporter:
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
-    secondaryUVMarginMethod: 0
+    secondaryUVMarginMethod: 1
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
@@ -120,9 +102,9 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
-  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
-  remapMaterialsIfMaterialImportModeIsNone: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
