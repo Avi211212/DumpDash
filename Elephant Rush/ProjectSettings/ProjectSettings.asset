@@ -958,7 +958,7 @@ PlayerSettings:
     Game_Performance: 0
     Hub: 0
     Legacy Analytics: 1
-    Purchasing: 0
+    Purchasing: 1
     UNet: 0
     Unity Ads: 1
     Unity_Ads: 0
