@@ -1,45 +1,92 @@
-using UnityEngine;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
+using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SocialPlatforms;
+using System.Threading.Tasks;
+using Unity.Services.Core;
+using Unity.Services.Authentication;
 
 public class GoogleInit : MonoBehaviour
 {
     public Text detailsText;
-    
-    private string pName =  "";
+    Task task;
+
+    private string pName = "";
+
+    async void Awake()
+    {
+        await UnityServices.InitializeAsync();
+    }
 
     public void SignIn()
     {
         PlayGamesPlatform.Activate();
-        PlayGamesPlatform.Instance.ManuallyAuthenticate(ProcessAuthentication);
     }
 
-    internal void ProcessAuthentication(SignInStatus status)
+    public void LoginGooglePlayGames()
     {
-        if(pName != "" && pName != "Sign in Failed!!")
+        PlayGamesPlatform.Instance.Authenticate((success) =>
         {
-            
-        }
-        else
-        {
-            if (status == SignInStatus.Success)
+            if(pName == "")
             {
-                string name = PlayGamesPlatform.Instance.GetUserDisplayName();
-                string id = PlayGamesPlatform.Instance.GetUserId();
-                string ImgUrl = PlayGamesPlatform.Instance.GetUserImageUrl();
+                PlayGamesPlatform.Instance.RequestServerSideAccess(true, code =>
+                {
+                    task = UnlinkGooglePlayGamesAsync(code);
+                });
+            }
+            else if (success == SignInStatus.Success)
+            {
+                Debug.Log("Login with Google Play games successful.");
 
-                pName = name;
-                detailsText.text = name;
+                PlayGamesPlatform.Instance.RequestServerSideAccess(true, code =>
+                {
+                    Debug.Log("Authorization code: " + code);
+
+                    detailsText.text = PlayGamesPlatform.Instance.GetUserDisplayName();
+                    pName = PlayGamesPlatform.Instance.GetUserDisplayName();
+
+                    task = SignInWithGooglePlayGamesAsync(code);
+                });
             }
             else
-            {
-                detailsText.text = "Sign in Failed!!";
-                // Disable your integration with Play Games Services or show a login button
-                // to ask users to sign-in. Clicking it should call
-                // PlayGamesPlatform.Instance.ManuallyAuthenticate(ProcessAuthentication).
+            {             
+                Debug.LogError("Login Unsuccessful");
+                Debug.LogError(success);
             }
+        });
+    }
+
+    async Task SignInWithGooglePlayGamesAsync(string authCode)
+    {
+        try
+        {
+            await AuthenticationService.Instance.SignInWithGooglePlayGamesAsync(authCode);
+            Debug.Log("SignInWithGooglePlayGamesAsync is successful.");
+        }
+        catch (AuthenticationException ex)
+        {
+            Debug.LogException(ex);
+        }
+        catch (RequestFailedException ex)
+        {
+            Debug.LogException(ex);
+        }
+    }
+
+    async Task UnlinkGooglePlayGamesAsync(string idToken)
+    {
+        try
+        {
+            await AuthenticationService.Instance.UnlinkGooglePlayGamesAsync();
+            Debug.Log("Unlink is successful.");
+        }
+        catch (AuthenticationException ex)
+        {
+            Debug.LogException(ex);
+        }
+        catch (RequestFailedException ex)
+        {
+            Debug.LogException(ex);
         }
     }
 }
