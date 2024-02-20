@@ -21,13 +21,16 @@ public class GoogleInit : MonoBehaviour
     public void SignIn()
     {
         PlayGamesPlatform.Activate();
+        LoginGooglePlayGames();
     }
 
     public void LoginGooglePlayGames()
     {
+        Debug.Log("Button Working");
+
         PlayGamesPlatform.Instance.Authenticate((success) =>
         {
-            if(pName == "")
+            if(pName != "")
             {
                 PlayGamesPlatform.Instance.RequestServerSideAccess(true, code =>
                 {
@@ -75,18 +78,22 @@ public class GoogleInit : MonoBehaviour
 
     async Task UnlinkGooglePlayGamesAsync(string idToken)
     {
-        try
-        {
-            await AuthenticationService.Instance.UnlinkGooglePlayGamesAsync();
-            Debug.Log("Unlink is successful.");
-        }
-        catch (AuthenticationException ex)
-        {
-            Debug.LogException(ex);
-        }
-        catch (RequestFailedException ex)
-        {
-            Debug.LogException(ex);
-        }
+        await AuthenticationService.Instance.UnlinkGooglePlayGamesAsync();
+        Debug.Log("Unlink is successful.");
+        detailsText.text = "Login";
+        pName = "";
+
+        //try
+        //{
+    
+        //}
+        //catch (AuthenticationException ex)
+        //{
+        //    Debug.LogException(ex);
+        //}
+        //catch (RequestFailedException ex)
+        //{
+        //    Debug.LogException(ex);
+        //}
     }
 }

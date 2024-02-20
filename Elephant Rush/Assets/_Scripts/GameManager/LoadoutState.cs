@@ -61,6 +61,7 @@ public class LoadoutState : AState
 
     public Character character;
     [SerializeField] private InputField nameInputField;
+    [SerializeField] private Button skipTutorialButton;
 
     protected GameObject m_Character;
     protected List<int> m_OwnedAccesories = new List<int>();
@@ -80,6 +81,7 @@ public class LoadoutState : AState
     {
         tutorialBlocker.SetActive(!PlayerData.instance.tutorialDone);
         tutorialPrompt.SetActive(false);
+        skipTutorialButton.gameObject.SetActive(!PlayerData.instance.tutorialDone);
 
         inventoryCanvas.gameObject.SetActive(true);
         missionPopup.gameObject.SetActive(false);
@@ -424,6 +426,15 @@ public class LoadoutState : AState
 	{
 		m_CurrentModifier = modifier;
 	}
+
+    public void SkipTutorial()
+    {
+        PlayerData.instance.tutorialDone = true;
+        PlayerData.instance.Save();
+        tutorialBlocker.SetActive(false);
+        tutorialPrompt.SetActive(false);
+        skipTutorialButton.gameObject.SetActive(false);
+    }
 
     public void StartGame()
     {
