@@ -1007,9 +1007,9 @@ PlayerSettings:
     Game_Performance: 0
     Hub: 0
     Legacy Analytics: 1
-    Purchasing: 1
+    Purchasing: 0
     UNet: 0
-    Unity Ads: 1
+    Unity Ads: 0
     Unity_Ads: 0
   luminIcon:
     m_Name: 
@@ -1030,11 +1030,11 @@ PlayerSettings:
   apiCompatibilityLevel: 3
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 66412029-80d0-474e-abdb-388d9527bd2d
+  cloudProjectId: 49b5ec46-afa3-45fe-99fc-e568ff31232d
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Elephant Rush
-  organizationId: animesh_sharma
+  organizationId: constant-gaming-50420ab5-f6fa-4be1-abe3-3e2175f0a54e
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 1
   hmiLoadingImage: {fileID: 0}

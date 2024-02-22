@@ -1,7 +1,9 @@
-using GooglePlayGames;
-using GooglePlayGames.BasicApi;
+#if PLATFORM_ANDROID
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SocialPlatforms;
+using GooglePlayGames;
+using GooglePlayGames.BasicApi;
 using System.Threading.Tasks;
 using Unity.Services.Core;
 using Unity.Services.Authentication;
@@ -85,7 +87,6 @@ public class GoogleInit : MonoBehaviour
 
         //try
         //{
-    
         //}
         //catch (AuthenticationException ex)
         //{
@@ -97,3 +98,4 @@ public class GoogleInit : MonoBehaviour
         //}
     }
 }
+#endif
