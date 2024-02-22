@@ -11208,6 +11208,7 @@ MonoBehaviour:
   consumableIcon: {fileID: 11439736, guid: 0c5f0793b82536342bd64bc3e3fdee8a, type: 3}
   character: {fileID: 0}
   nameInputField: {fileID: 125743611}
+  skipTutorialButton: {fileID: 711183706}
 --- !u!114 &869760750
 MonoBehaviour:
   m_ObjectHideFlags: 0
