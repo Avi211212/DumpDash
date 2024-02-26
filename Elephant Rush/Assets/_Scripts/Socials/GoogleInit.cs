@@ -7,67 +7,102 @@ using GooglePlayGames.BasicApi;
 using System.Threading.Tasks;
 using Unity.Services.Core;
 using Unity.Services.Authentication;
+using System;
 
 public class GoogleInit : MonoBehaviour
 {
-    public Text detailsText;
+    [SerializeField] private Text detailsText;
     Task task;
 
-    private string pName = "";
+    bool isSignedIn = false;
+    public string Token;
+    public string Error;
 
-    async void Awake()
+    void Awake()
+    {
+        PlayGamesPlatform.Activate();
+    }
+
+    async void Start()
     {
         await UnityServices.InitializeAsync();
     }
 
-    public void SignIn()
+    async public void Login()
     {
-        PlayGamesPlatform.Activate();
-        LoginGooglePlayGames();
+        if(isSignedIn)
+        {
+            await UnlinkGooglePlayGamesAsync(Token);
+            isSignedIn = false;
+        }
+        else
+        {
+            await LoginGooglePlayGames();
+            await LinkWithGooglePlayGamesAsync(Token);
+            isSignedIn = true;
+        }
     }
 
-    public void LoginGooglePlayGames()
+    public Task LoginGooglePlayGames()
     {
-        Debug.Log("Button Working");
-
+        var tcs = new TaskCompletionSource<object>();
         PlayGamesPlatform.Instance.Authenticate((success) =>
         {
-            if(pName != "")
-            {
-                PlayGamesPlatform.Instance.RequestServerSideAccess(true, code =>
-                {
-                    task = UnlinkGooglePlayGamesAsync(code);
-                });
-            }
-            else if (success == SignInStatus.Success)
+            if (success == SignInStatus.Success)
             {
                 Debug.Log("Login with Google Play games successful.");
-
                 PlayGamesPlatform.Instance.RequestServerSideAccess(true, code =>
                 {
                     Debug.Log("Authorization code: " + code);
-
                     detailsText.text = PlayGamesPlatform.Instance.GetUserDisplayName();
-                    pName = PlayGamesPlatform.Instance.GetUserDisplayName();
-
-                    task = SignInWithGooglePlayGamesAsync(code);
+                    Token = code;
+                    
+                    tcs.SetResult(null);
                 });
             }
             else
-            {             
-                Debug.LogError("Login Unsuccessful");
-                Debug.LogError(success);
+            {
+                Error = "Failed to retrieve Google play games authorization code";
+                Debug.Log("Login Unsuccessful");
+                tcs.SetException(new Exception("Failed"));
             }
         });
+        return tcs.Task;
     }
+
 
     async Task SignInWithGooglePlayGamesAsync(string authCode)
     {
         try
         {
             await AuthenticationService.Instance.SignInWithGooglePlayGamesAsync(authCode);
-            Debug.Log("SignInWithGooglePlayGamesAsync is successful.");
+            Debug.Log($"PlayerID: {AuthenticationService.Instance.PlayerId}"); 
+            Debug.Log("SignIn is successful.");
         }
+        catch (AuthenticationException ex)
+        {
+            Debug.LogException(ex);
+        }
+        catch (RequestFailedException ex)
+        {
+            Debug.LogException(ex);
+        }
+    }
+
+    async Task LinkWithGooglePlayGamesAsync(string authCode)
+    {
+        try
+        {
+            await AuthenticationService.Instance.LinkWithGooglePlayGamesAsync(authCode);
+            Debug.Log("Link is successful.");
+        }
+        catch (AuthenticationException ex) when (ex.ErrorCode == AuthenticationErrorCodes.AccountAlreadyLinked)
+        {
+            Debug.LogError("This user is already linked with another account. Log in instead.");
+
+            await SignInWithGooglePlayGamesAsync(authCode);
+        }
+
         catch (AuthenticationException ex)
         {
             Debug.LogException(ex);
@@ -80,22 +115,20 @@ public class GoogleInit : MonoBehaviour
 
     async Task UnlinkGooglePlayGamesAsync(string idToken)
     {
-        await AuthenticationService.Instance.UnlinkGooglePlayGamesAsync();
-        Debug.Log("Unlink is successful.");
-        detailsText.text = "Login";
-        pName = "";
-
-        //try
-        //{
-        //}
-        //catch (AuthenticationException ex)
-        //{
-        //    Debug.LogException(ex);
-        //}
-        //catch (RequestFailedException ex)
-        //{
-        //    Debug.LogException(ex);
-        //}
+        try
+        {
+            await AuthenticationService.Instance.UnlinkGooglePlayGamesAsync();
+            Debug.Log("Unlink is successful.");
+            detailsText.text = "Login";
+        }
+        catch (AuthenticationException ex)
+        {
+            Debug.LogException(ex);
+        }
+        catch (RequestFailedException ex)
+        {
+            Debug.LogException(ex);
+        }
     }
 }
 #endif

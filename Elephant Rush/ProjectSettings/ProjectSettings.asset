@@ -263,7 +263,7 @@ PlayerSettings:
   useCustomBaseGradleTemplate: 0
   useCustomGradlePropertiesTemplate: 0
   useCustomGradleSettingsTemplate: 0
-  useCustomProguardFile: 1
+  useCustomProguardFile: 0
   AndroidTargetArchitectures: 3
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 2
@@ -1030,10 +1030,10 @@ PlayerSettings:
   apiCompatibilityLevel: 3
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 49b5ec46-afa3-45fe-99fc-e568ff31232d
+  cloudProjectId: 0bbb85de-4093-4c01-b722-5191f68c8b30
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Elephant Rush
+  projectName: ElephantRush
   organizationId: constant-gaming-50420ab5-f6fa-4be1-abe3-3e2175f0a54e
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 1
