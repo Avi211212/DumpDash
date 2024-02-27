@@ -8,12 +8,15 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener
     static protected AdManager s_Instance;
     static public AdManager instance { get { return s_Instance; } }
 
+    [Header("Game Ids")]
     [SerializeField] private string androidGameId;
     [SerializeField] private string iosGameId;
-
     [SerializeField] private bool isTestingMode = true;
-
     private string gameId;
+
+    public BannerLoader bannerLoader;
+    public InterstitialLoader interstitialLoader;
+    public RewardedLoader rewardedLoader;
 
     private void Awake()
     {
@@ -42,8 +45,12 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener
 
         if (!Advertisement.isInitialized && Advertisement.isSupported)
         {
-            Advertisement.Initialize(gameId, isTestingMode, this); //ONLY ONCE
+            Advertisement.Initialize(gameId, isTestingMode, this);
         }
+
+        bannerLoader.Initialize();
+        interstitialLoader.Initialize();
+        rewardedLoader.Initialize();
     }
 
     public void OnInitializationComplete()

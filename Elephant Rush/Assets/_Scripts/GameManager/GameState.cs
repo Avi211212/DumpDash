@@ -438,6 +438,7 @@ public class GameState : AState
     public void GameOver()
     {
         manager.SwitchState("GameOver");
+        AdManager.instance.bannerLoader.ShowBannerAd();
     }
 
     public void PremiumForLife()
