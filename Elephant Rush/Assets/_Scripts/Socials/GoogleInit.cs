@@ -1,92 +1,86 @@
-using GooglePlayGames;
-using GooglePlayGames.BasicApi;
+#if PLATFORM_ANDROID
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SocialPlatforms;
+using GooglePlayGames;
+using GooglePlayGames.BasicApi;
 using System.Threading.Tasks;
 using Unity.Services.Core;
 using Unity.Services.Authentication;
+using System;
 
 public class GoogleInit : MonoBehaviour
 {
-    public Text detailsText;
-    Task task;
+    [SerializeField] private Text detailsText;
+    
+    private PlayGamesClientConfiguration clientConfiguration;
 
-    private string pName = "";
+    private bool IsSignedIn => PlayGamesPlatform.Instance.IsAuthenticated();
 
-    async void Awake()
+    private void Start()
     {
-        await UnityServices.InitializeAsync();
-    }
+        ConfigureGPGS();
 
-    public void SignIn()
-    {
-        PlayGamesPlatform.Activate();
-    }
-
-    public void LoginGooglePlayGames()
-    {
-        PlayGamesPlatform.Instance.Authenticate((success) =>
+        if(IsSignedIn)
         {
-            if(pName == "")
+            detailsText.text = Social.localUser.userName;
+        }
+        else
+        {
+            detailsText.text = "Login";
+        }
+    }
+
+    internal void ConfigureGPGS()
+    {
+        clientConfiguration = new PlayGamesClientConfiguration.Builder().EnableSavedGames().Build();
+    }
+
+    internal void SignIntoGPGS(SignInInteractivity interactivity, PlayGamesClientConfiguration configuration)
+    {
+        configuration = clientConfiguration;
+        PlayGamesPlatform.InitializeInstance(configuration);
+        PlayGamesPlatform.Activate();
+
+        PlayGamesPlatform.Instance.Authenticate(interactivity, (code) =>
+        {
+            Debug.Log("Authenticating..");
+
+            if (code == SignInStatus.Success)
             {
-                PlayGamesPlatform.Instance.RequestServerSideAccess(true, code =>
-                {
-                    task = UnlinkGooglePlayGamesAsync(code);
-                });
-            }
-            else if (success == SignInStatus.Success)
-            {
-                Debug.Log("Login with Google Play games successful.");
-
-                PlayGamesPlatform.Instance.RequestServerSideAccess(true, code =>
-                {
-                    Debug.Log("Authorization code: " + code);
-
-                    detailsText.text = PlayGamesPlatform.Instance.GetUserDisplayName();
-                    pName = PlayGamesPlatform.Instance.GetUserDisplayName();
-
-                    task = SignInWithGooglePlayGamesAsync(code);
-                });
+                Debug.Log("Sign in successful");
+                detailsText.text = Social.localUser.userName;
             }
             else
-            {             
-                Debug.LogError("Login Unsuccessful");
-                Debug.LogError(success);
+            {
+                Debug.Log("Sign in failed" + code);
+                detailsText.text = "Failed";
             }
         });
     }
 
-    async Task SignInWithGooglePlayGamesAsync(string authCode)
+    public void LoginLogoutButton()
     {
-        try
+        if (IsSignedIn)
         {
-            await AuthenticationService.Instance.SignInWithGooglePlayGamesAsync(authCode);
-            Debug.Log("SignInWithGooglePlayGamesAsync is successful.");
+            SignOut();
         }
-        catch (AuthenticationException ex)
+        else
         {
-            Debug.LogException(ex);
-        }
-        catch (RequestFailedException ex)
-        {
-            Debug.LogException(ex);
+            SignIn();
         }
     }
 
-    async Task UnlinkGooglePlayGamesAsync(string idToken)
+    private void SignIn()
     {
-        try
-        {
-            await AuthenticationService.Instance.UnlinkGooglePlayGamesAsync();
-            Debug.Log("Unlink is successful.");
-        }
-        catch (AuthenticationException ex)
-        {
-            Debug.LogException(ex);
-        }
-        catch (RequestFailedException ex)
-        {
-            Debug.LogException(ex);
-        }
+        SignIntoGPGS(SignInInteractivity.CanPromptAlways, clientConfiguration);
     }
+
+    private void SignOut()
+    {
+        PlayGamesPlatform.Instance.SignOut();
+        detailsText.text = "Login";
+    }
+
 }
+#endif

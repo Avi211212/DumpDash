@@ -1,5 +1,5 @@
-using VoxelBusters.CoreLibrary;
-using VoxelBusters.EssentialKit;
+//using VoxelBusters.CoreLibrary;
+//using VoxelBusters.EssentialKit;
 using UnityEngine;
 using System.Collections;
 
@@ -21,23 +21,23 @@ public class SharingServices : MonoBehaviour
         text = "I just scored " + gameScore + " points in Haathi Daaud! Can you beat me? ";
         url = "https://play.google.com/store/apps/details?id=com.supercell.clashroyale";
 
-        StartCoroutine(ShareTextWithScreenshot());
+        //StartCoroutine(ShareTextWithScreenshot());
     }
 
-    private IEnumerator ShareTextWithScreenshot()
-    {
-        yield return new WaitForSeconds(0.5f);
+    //private IEnumerator ShareTextWithScreenshot()
+    //{
+    //    yield return new WaitForSeconds(0.5f);
 
-        ShareSheet shareSheet = ShareSheet.CreateInstance();
-        shareSheet.AddText(text + url);
-        shareSheet.AddScreenshot();
-        shareSheet.SetCompletionCallback((result, error) => {
-            Debug.Log("Share Sheet was closed. Result code: " + result.ResultCode);
-        });
-        shareSheet.Show();
+    //    ShareSheet shareSheet = ShareSheet.CreateInstance();
+    //    shareSheet.AddText(text + url);
+    //    shareSheet.AddScreenshot();
+    //    shareSheet.SetCompletionCallback((result, error) => {
+    //        Debug.Log("Share Sheet was closed. Result code: " + result.ResultCode);
+    //    });
+    //    shareSheet.Show();
 
-        StartCoroutine(EnableButtons());
-    }
+    //    StartCoroutine(EnableButtons());
+    //}
 
     private IEnumerator EnableButtons()
     {

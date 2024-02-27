@@ -139,7 +139,7 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 1.0.4
+  bundleVersion: 1.0.6
   preloadedAssets:
   - {fileID: 0}
   - {fileID: 0}
@@ -176,7 +176,7 @@ PlayerSettings:
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
-  AndroidBundleVersionCode: 4
+  AndroidBundleVersionCode: 6
   AndroidMinSdkVersion: 22
   AndroidTargetSdkVersion: 33
   AndroidPreferredInstallLocation: 1
@@ -189,7 +189,7 @@ PlayerSettings:
   CreateWallpaper: 0
   APKExpansionFiles: 0
   keepLoadedShadersAlive: 0
-  StripUnusedMeshComponents: 0
+  StripUnusedMeshComponents: 1
   strictShaderVariantMatching: 0
   VertexChannelCompressionMask: 214
   iPhoneSdkVersion: 988
@@ -1009,9 +1009,9 @@ PlayerSettings:
     Game_Performance: 0
     Hub: 0
     Legacy Analytics: 1
-    Purchasing: 1
+    Purchasing: 0
     UNet: 0
-    Unity Ads: 1
+    Unity Ads: 0
     Unity_Ads: 0
   luminIcon:
     m_Name: 
@@ -1032,14 +1032,14 @@ PlayerSettings:
   apiCompatibilityLevel: 3
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 66412029-80d0-474e-abdb-388d9527bd2d
+  cloudProjectId: 0bbb85de-4093-4c01-b722-5191f68c8b30
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Elephant Rush
-  organizationId: animesh_sharma
+  projectName: ElephantRush
+  organizationId: constant-gaming-50420ab5-f6fa-4be1-abe3-3e2175f0a54e
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 1
   hmiLoadingImage: {fileID: 0}
   platformRequiresReadableAssets: 0
   virtualTexturingSupportEnabled: 0
-  insecureHttpOption: 0
+  insecureHttpOption: 1
