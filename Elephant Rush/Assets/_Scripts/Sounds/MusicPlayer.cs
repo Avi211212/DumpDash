@@ -57,7 +57,7 @@ public class MusicPlayer : MonoBehaviour
 			mixer.GetFloat ("MusicVolume", out PlayerData.instance.musicVolume);
 			mixer.GetFloat ("MasterSFXVolume", out PlayerData.instance.masterSFXVolume);
 
-			PlayerData.instance.Save ();
+			PlayerData.instance.Save();
 		}
 
 		StartCoroutine(RestartAllStems());

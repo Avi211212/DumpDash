@@ -59,6 +59,7 @@ public class GameState : AState
     public Modifier currentModifier = new Modifier();
 
     public string adsPlacementId = "rewardedVideo";
+
 #if UNITY_ANALYTICS
     //public AdvertisingNetwork adsNetwork = AdvertisingNetwork.UnityAds;
 #endif
