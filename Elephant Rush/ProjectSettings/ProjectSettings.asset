@@ -1011,7 +1011,7 @@ PlayerSettings:
     Legacy Analytics: 1
     Purchasing: 0
     UNet: 0
-    Unity Ads: 0
+    Unity Ads: 1
     Unity_Ads: 0
   luminIcon:
     m_Name: 

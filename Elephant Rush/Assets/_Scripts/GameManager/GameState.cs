@@ -4,6 +4,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using Facebook.Unity.Example;
+
 
 #if UNITY_ADS
 using UnityEngine.Advertisements;
@@ -26,6 +28,7 @@ public class GameState : AState
 	public AudioClip[] gameTheme;
 
     [Header("UI")]
+    [SerializeField] private Text adTimerText;
     public Text coinText;
     public Text premiumText;
     public Text scoreText;
@@ -86,6 +89,9 @@ public class GameState : AState
     protected TrackSegment m_NextValidSegment = null;
     protected int k_ObstacleToClear = 3;
     protected bool IsPaused { get { return pauseMenu.gameObject.activeSelf; } }
+    protected bool isAdTimer = false;
+
+    private float adTimer = 5;
 
     public override void Enter(AState from)
     {
@@ -106,6 +112,8 @@ public class GameState : AState
 
         m_AdsInitialised = false;
         m_GameoverSelectionDone = false;
+        isAdTimer = false;
+        adTimer = 5;
 
         StartGame();
     }
@@ -211,7 +219,7 @@ public class GameState : AState
             adsForLifeButton.SetActive(false); //Ads is disabled
 #endif
 
-            return;
+            //return;
         }
 
         if (trackManager.isLoaded)
@@ -293,6 +301,17 @@ public class GameState : AState
             UpdateUI();
 
             currentModifier.OnRunTick(this);
+        }
+
+        if (isAdTimer && adTimer >= 0)
+        {
+            adTimerText.text = ((int)adTimer).ToString();
+            adTimer -= Time.deltaTime;
+        }
+        else if(adTimer <= 0)
+        {
+            GameOver();
+            return;
         }
     }
 
@@ -433,12 +452,14 @@ public class GameState : AState
         ClearPowerup();
 
         gameOverPopup.SetActive(true);
+
+        isAdTimer = true;
     }
 
     public void GameOver()
     {
         manager.SwitchState("GameOver");
-        AdManager.instance.bannerLoader.ShowBannerAd();
+        AdManager.instance.interstitialLoader.LoadAd();
     }
 
     public void PremiumForLife()
