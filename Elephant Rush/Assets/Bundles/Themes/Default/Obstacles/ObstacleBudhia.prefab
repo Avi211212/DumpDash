@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 516548832893963444}
   - component: {fileID: 4452644012053423809}
-  - component: {fileID: 7735028643026287289}
   - component: {fileID: 6087487905912600201}
   - component: {fileID: 6366854188894819896}
   - component: {fileID: 816879071721823771}
   - component: {fileID: 4008999463692217023}
+  - component: {fileID: 376944241160936238}
   m_Layer: 9
   m_Name: ObstacleBudhia
   m_TagString: Attackable
@@ -29,6 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6022357330766247533}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -36,7 +37,6 @@ Transform:
   m_Children:
   - {fileID: 5746275060915108082}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &4452644012053423809
 BoxCollider:
@@ -46,24 +46,19 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6022357330766247533}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1.28, y: 3.06, z: 1.48}
   m_Center: {x: -0.23, y: 1.55, z: 0.13}
---- !u!114 &7735028643026287289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6022357330766247533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01bf43c79f6bad84784689f6386c2e5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  impactedSound: {fileID: 8300000, guid: 8919022307a7742e0904679121f83c4f, type: 3}
 --- !u!82 &6087487905912600201
 AudioSource:
   m_ObjectHideFlags: 0
@@ -194,20 +189,50 @@ Rigidbody:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6022357330766247533}
-  serializedVersion: 2
+  serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &376944241160936238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6022357330766247533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e19b615fa0c4b3ea6c8cf7fcb198d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  impactedSound: {fileID: 8300000, guid: 8919022307a7742e0904679121f83c4f, type: 3}
+  minTime: 12
+  maxTime: 12
+  animator: {fileID: 1675161542346256930}
+  rotationSpeed: 90
+  patrollingSound: []
 --- !u!1001 &5202897562997792537
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 516548832893963444}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 57ea74dd70a154955b8678e9301c24df,
@@ -286,6 +311,17 @@ PrefabInstance:
       value: Iv Pole Walking
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 9163166418615681363, guid: 57ea74dd70a154955b8678e9301c24df,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5885408829050998670}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 57ea74dd70a154955b8678e9301c24df,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1675161542346256930}
   m_SourcePrefab: {fileID: 100100000, guid: 57ea74dd70a154955b8678e9301c24df, type: 3}
 --- !u!4 &3971748859211341386 stripped
 Transform:
@@ -301,7 +337,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1675161542346256930
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -318,7 +354,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &5746275060915108082 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 57ea74dd70a154955b8678e9301c24df,
@@ -330,6 +367,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 3971748859211341386}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: ea20f0cc1fd197e4998cd4c5188a8386,
@@ -398,4 +436,13 @@ PrefabInstance:
       value: WalkingStick
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea20f0cc1fd197e4998cd4c5188a8386, type: 3}
+--- !u!4 &5885408829050998670 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ea20f0cc1fd197e4998cd4c5188a8386,
+    type: 3}
+  m_PrefabInstance: {fileID: 6208094819415566437}
+  m_PrefabAsset: {fileID: 0}

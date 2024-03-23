@@ -37,22 +37,25 @@ public class DailyMissionsManager : MonoBehaviour
         }
         else
         {
-            lastRefreshDate = DateTime.UtcNow.Date.AddDays(-1);
+            lastRefreshDate = DateTime.UtcNow.AddHours(5).AddMinutes(30).Date.AddDays(-1); // Convert to IST and subtract one day
         }
     }
 
     private void CheckForMissionRefresh()
     {
-        if (DateTime.UtcNow.Date > lastRefreshDate)
+        // Convert current UTC time to IST
+        DateTime currentIST = DateTime.UtcNow.AddHours(5).AddMinutes(30);
+
+        if (currentIST.Date > lastRefreshDate)
         {
             RefreshMission();
-            lastRefreshDate = DateTime.UtcNow.Date;
+            lastRefreshDate = currentIST.Date;
             PlayerPrefs.SetString(LastRefreshDateKey, lastRefreshDate.ToBinary().ToString());
             PlayerPrefs.Save();
         }
         else
         {
-            float timeLeft = (float)(lastRefreshDate.AddDays(1) - DateTime.UtcNow).TotalSeconds;
+            float timeLeft = (float)(lastRefreshDate.AddDays(1) - currentIST).TotalSeconds;
             float hours = Mathf.FloorToInt(timeLeft / 3600);
             float minutes = Mathf.FloorToInt((timeLeft - hours * 3600) / 60);
             float seconds = Mathf.FloorToInt(timeLeft - hours * 3600 - minutes * 60);
