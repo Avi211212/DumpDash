@@ -14,6 +14,8 @@ public class RewardedLoader : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSho
         adUnitId = iosAdUnitId;
 #elif UNITY_ANDROID
         adUnitId = androidAdUnitId;
+#elif UNITY_EDITOR
+        gameId = androidGameId;//for testing
 #endif
     }
 
@@ -41,6 +43,7 @@ public class RewardedLoader : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSho
     {
         print("showing Rewarded ad!!");
         Advertisement.Show(adUnitId, this);
+        Time.timeScale = 0;
     }
 
     public void OnUnityAdsShowClick(string placementId)
@@ -50,6 +53,7 @@ public class RewardedLoader : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSho
 
     public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState)
     {
+        Time.timeScale = 1;
         if (placementId.Equals(adUnitId) && showCompletionState.Equals(UnityAdsCompletionState.COMPLETED))
         {
             print("Rewarded show complete , Distribute the rewards");

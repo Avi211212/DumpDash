@@ -111,9 +111,6 @@ public class GameState : AState
         }
 
         m_AdsInitialised = false;
-        m_GameoverSelectionDone = false;
-        isAdTimer = false;
-        adTimer = 5;
 
         StartGame();
     }
@@ -127,6 +124,12 @@ public class GameState : AState
 
     public void StartGame()
     {
+        Debug.Log("Starting Game");
+
+        m_GameoverSelectionDone = false;
+        isAdTimer = false;
+        adTimer = 5;
+
         canvas.gameObject.SetActive(true);
         pauseMenu.gameObject.SetActive(false);
         wholeUI.gameObject.SetActive(true);
@@ -245,7 +248,7 @@ public class GameState : AState
                 chrCtrl.CleanConsumable();
                 chrCtrl.character.animator.SetBool(s_DeadHash, true);
                 chrCtrl.characterCollider.koParticle.gameObject.SetActive(true);
-                StartCoroutine(WaitForGameOver());
+                OnGameOver();//StartCoroutine(WaitForGameOver());
             }
 
             // Consumable ticking & lifetime management
@@ -304,19 +307,30 @@ public class GameState : AState
             currentModifier.OnRunTick(this);
         }
 
-        if (isAdTimer && adTimer >= 0)
+        HandleAdTimer();
+    }
+
+    private void HandleAdTimer()
+    {
+
+        if(!isAdTimer)
+        {
+            return;
+        }
+
+        if (adTimer >= 0)
         {
             adTimerText.text = ((int)adTimer).ToString();
             adTimer -= Time.deltaTime;
         }
-        else if(adTimer <= 0)
+        else
         {
             GameOver();
             return;
         }
     }
 
-	void OnApplicationPause(bool pauseStatus)
+    void OnApplicationPause(bool pauseStatus)
 	{
 		if (pauseStatus) Pause();
 	}
@@ -376,7 +390,6 @@ public class GameState : AState
 
 		for (int i = 0; i < 3; ++i)
 		{
-
 			if(trackManager.characterController.currentLife > i)
 			{
 				m_LifeHearts[i].color = Color.white;
@@ -413,23 +426,31 @@ public class GameState : AState
             inventoryIcon.transform.parent.gameObject.SetActive(false);
     }
 
-	IEnumerator WaitForGameOver()
-	{
-		m_Finished = true;
-		trackManager.StopMove();
+    void OnGameOver()
+    {
+        m_Finished = true;
+        trackManager.StopMove();
 
-        // Reseting the global blinking value. Can happen if game unexpectly exited while still blinking
         Shader.SetGlobalFloat("_BlinkingValue", 0.0f);
 
-        yield return new WaitForSeconds(2.0f);
         if (currentModifier.OnRunEnd(this))
         {
             if (trackManager.isRerun)
-                manager.SwitchState("GameOver");
+            {
+                StartCoroutine(WaitForGameOver());
+            }
             else
+            {
                 OpenGameOverPopup();
+            }
         }
-	}
+    }
+
+    IEnumerator WaitForGameOver()
+    {
+        yield return new WaitForSeconds(2.0f);
+        manager.SwitchState("GameOver");
+    }
 
     protected void ClearPowerup()
     {
@@ -460,7 +481,7 @@ public class GameState : AState
     public void GameOver()
     {
         manager.SwitchState("GameOver");
-        AdManager.instance.interstitialLoader.LoadAd();
+        //AdManager.instance.interstitialLoader.LoadAd();
     }
 
     public void PremiumForLife()
@@ -471,6 +492,7 @@ public class GameState : AState
         if (m_GameoverSelectionDone)
             return;
 
+        isAdTimer = false;
         m_GameoverSelectionDone = true;
 
         PlayerData.instance.premium -= 3;
@@ -484,9 +506,11 @@ public class GameState : AState
 
     public void SecondWind()
     {
+        adTimer = 5;
         trackManager.characterController.currentLife = 1;
         trackManager.isRerun = true;
         StartGame();
+        //manager.SwitchState("Game");
     }
 
     public void ShowRewardedAd()
@@ -495,8 +519,13 @@ public class GameState : AState
             return;
 
         m_GameoverSelectionDone = true;
+        isAdTimer = false;
 
-#if UNITY_ADS
+        AdManager.instance.rewardedLoader.ShowAd();
+
+        SecondWind();
+
+/*#if UNITY_ADS
         if (Advertisement.IsReady(adsPlacementId))
         {
 #if UNITY_ANALYTICS
@@ -518,41 +547,9 @@ public class GameState : AState
 #endif
         }
 #else
-		GameOver();
-#endif
+        //GameOver();
+#endif*/
     }
-
-    //=== AD
-#if UNITY_ADS
-
-    private void HandleShowResult(ShowResult result)
-    {
-        switch (result)
-        {
-            case ShowResult.Finished:
-#if UNITY_ANALYTICS
-                AnalyticsEvent.AdComplete(adsRewarded, adsNetwork, adsPlacementId);
-#endif
-                SecondWind();
-                break;
-            case ShowResult.Skipped:
-                Debug.Log("The ad was skipped before reaching the end.");
-#if UNITY_ANALYTICS
-                AnalyticsEvent.AdSkip(adsRewarded, adsNetwork, adsPlacementId);
-#endif
-                break;
-            case ShowResult.Failed:
-                Debug.LogError("The ad failed to be shown.");
-#if UNITY_ANALYTICS
-                AnalyticsEvent.AdSkip(adsRewarded, adsNetwork, adsPlacementId, new Dictionary<string, object> {
-                    { "error", "failed" }
-                });
-#endif
-                break;
-        }
-    }
-#endif
-
 
     void TutorialCheckObstacleClear()
     {

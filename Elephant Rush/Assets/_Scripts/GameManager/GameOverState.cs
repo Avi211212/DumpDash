@@ -32,6 +32,8 @@ public class GameOverState : AState
 
     public override void Enter(AState from)
     {
+        Debug.Log("Entering GameOverState");
+
         Camera.main.transform.SetParent(null, true);
 
         canvas.gameObject.SetActive(true);
@@ -86,7 +88,7 @@ public class GameOverState : AState
 
     public void Share()
     {
-        sharingServices.Share(trackManager.score);
+        //sharingServices.Share(trackManager.score);
     }
     public void DoubleScoreByAd()
     {
