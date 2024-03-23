@@ -88,6 +88,12 @@ public class GameOverState : AState
     {
         sharingServices.Share(trackManager.score);
     }
+    public void DoubleScoreByAd()
+    {
+        AdManager.instance.rewardedLoader.ShowAd();
+        trackManager.score *= 2;
+        shareScreen.score.text = "Score : " + trackManager.score.ToString();
+    }
 
     public void Return()
     {

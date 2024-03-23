@@ -67,7 +67,7 @@ public class TrackManager : MonoBehaviour
 
     public float timeToStart { get { return m_TimeToStart; } }  // Will return -1 if already started (allow to update UI)
 
-    public int score { get { return m_Score; } }
+    public int score { get { return m_Score; } set { m_Score = value; } }
     public int multiplier { get { return m_Multiplier; } }
     public float currentSegmentDistance { get { return m_CurrentSegmentDistance; } }
     public float worldDistance { get { return m_TotalWorldDistance; } }
