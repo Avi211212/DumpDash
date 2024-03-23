@@ -111,11 +111,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - characters
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7bdb39ebebd595643954818cf9c0631e
-    m_Address: Assets/Bundles/Themes/Default/Obstacles/ObstacleBudhia.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 735e874f947d0e143a6b4e83f8a7283a, type: 2}
   m_SchemaSet:

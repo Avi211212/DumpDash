@@ -70,7 +70,7 @@ public class PatrollingObstacle : Obstacle
 
 		float actualTime = Random.Range(minTime, maxTime);
 
-        //time 2, becaus ethe animation is a back & forth, so we need the speed needed to do 4 lanes offset in the given time
+        //time 2, because the animation is a back & forth, so we need the speed needed to do 4 lanes offset in the given time
         m_MaxSpeed = (m_Segement.manager.laneOffset * k_LaneOffsetToFullWidth * 2) / actualTime;
 
 		if (animator != null)

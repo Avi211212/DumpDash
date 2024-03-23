@@ -22,7 +22,12 @@ public class PatrollingBudhia : Obstacle
 
     protected TrackSegment m_Segement;
 
+    [SerializeField] private Transform budhiaTransform;
+
     protected Vector3 m_OriginalPosition = Vector3.zero;
+    protected Quaternion m_OriginalRotation = Quaternion.identity;
+    protected Vector3 lastPosVector = Vector3.zero;
+    protected Vector3 currentPosVector = Vector3.zero;
     protected float m_MaxSpeed;
     protected float m_CurrentPos;
 
@@ -71,9 +76,12 @@ public class PatrollingBudhia : Obstacle
         m_OriginalPosition = transform.localPosition + transform.right * m_Segement.manager.laneOffset;
         transform.localPosition = m_OriginalPosition;
 
+        lastPosVector = transform.position;
+        currentPosVector = transform.position;
+
         float actualTime = Random.Range(minTime, maxTime);
 
-        //time 2, becaus ethe animation is a back & forth, so we need the speed needed to do 4 lanes offset in the given time
+        //time 2, because the animation is a back & forth, so we need the speed needed to do 4 lanes offset in the given time
         m_MaxSpeed = (m_Segement.manager.laneOffset * k_LaneOffsetToFullWidth * 2) / actualTime;
 
         if (animator != null)
@@ -101,15 +109,31 @@ public class PatrollingBudhia : Obstacle
         if (!m_isMoving)
             return;
 
+        m_CurrentPos += Time.deltaTime * m_MaxSpeed;
+        lastPosVector = transform.localPosition;
+        transform.localPosition = m_OriginalPosition - transform.right * Mathf.PingPong(m_CurrentPos, m_Segement.manager.laneOffset * k_LaneOffsetToFullWidth);
+        currentPosVector = transform.localPosition;
+
+        // Rotate in the direction of movement
+        float dotProd = Vector3.Dot(lastPosVector, currentPosVector);
+
+        if (dotProd < 0) 
+        {
+            Debug.Log("Rotate");
+            budhiaTransform.rotation = Quaternion.Euler(0, budhiaTransform.rotation.y + 90, 0);
+        }
+
+        //transform.localRotation = m_OriginalRotation  transform.right * Mathf.PingPong(m_CurrentPos, m_Segement.manager.laneOffset * k_LaneOffsetToFullWidth);
+
         // Move forward
-        transform.Translate(Time.deltaTime * m_MaxSpeed * Vector3.forward );
+        //transform.Translate(Time.deltaTime * m_MaxSpeed * Vector3.forward );
 
         // Check if reached the end of the path
-        if (transform.position.z > m_OriginalPosition.z + m_Segement.manager.laneOffset * 4)
-        {
+        //if (transform.position.z > m_OriginalPosition.z + m_Segement.manager.laneOffset * 4)
+        //{
             // Rotate
-            transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
-        }
+            //transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
+       // }
     }
 }
 
