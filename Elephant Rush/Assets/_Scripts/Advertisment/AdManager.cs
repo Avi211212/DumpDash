@@ -13,6 +13,9 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener
     [SerializeField] private string iosGameId;
     [SerializeField] private bool isTestingMode = true;
     private string gameId;
+    private bool isInitialized = false;
+    
+    public bool IsInitialized { get { return isInitialized; } }
 
     public BannerLoader bannerLoader;
     public InterstitialLoader interstitialLoader;
@@ -56,6 +59,7 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener
     public void OnInitializationComplete()
     {
         print("Ads initialized!!");
+        isInitialized = true;
     }
 
     public void OnInitializationFailed(UnityAdsInitializationError error, string message)

@@ -200,11 +200,12 @@ public class GameState : AState
         if (m_Finished)
         {
             //if we are finished, we check if advertisement is ready, allow to disable the button until it is ready
+            adsForLifeButton.SetActive(true);
 #if UNITY_ADS
-            if (!trackManager.isTutorial && !m_AdsInitialised && Advertisement.IsReady(adsPlacementId))
+            if (!trackManager.isTutorial && AdManager.instance.isInitialized)
             {
+                Debug.Log("Finished");
                 adsForLifeButton.SetActive(true);
-                m_AdsInitialised = true;
 #if UNITY_ANALYTICS
                 AnalyticsEvent.AdOffer(adsRewarded, adsNetwork, adsPlacementId, new Dictionary<string, object>
             {
@@ -216,7 +217,7 @@ public class GameState : AState
             else if(trackManager.isTutorial || !m_AdsInitialised)
                 adsForLifeButton.SetActive(false);
 #else
-            adsForLifeButton.SetActive(false); //Ads is disabled
+            //adsForLifeButton.SetActive(false); //Ads is disabled
 #endif
 
             //return;
