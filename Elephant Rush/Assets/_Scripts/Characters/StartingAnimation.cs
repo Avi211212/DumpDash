@@ -18,6 +18,7 @@ public class StartingAnimation : MonoBehaviour
     [SerializeField] private Animator startingAnimator;
     [SerializeField] private Animator logoImageAnimator;
     [SerializeField] private Slider loadingSlider;
+    [SerializeField] private Text loadingText;
 
     private float runningSpeed = 0.0f;
 
@@ -72,6 +73,7 @@ public class StartingAnimation : MonoBehaviour
         {
             float progress = Mathf.Clamp01(operation.progress / 0.9f);
             
+            loadingText.text = (int)(progress * 100) + "%";
             loadingSlider.value = progress;
 
             yield return null;
