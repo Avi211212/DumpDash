@@ -15,7 +15,7 @@ public class RewardedLoader : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSho
 #elif UNITY_ANDROID
         adUnitId = androidAdUnitId;
 #elif UNITY_EDITOR
-        gameId = androidGameId;//for testing
+        adUnitId = androidAdUnitId;//for testing
 #endif
     }
 
